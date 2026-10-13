@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quasar Labs: Quasar for Windows, Android backup and imaging</title>
+<meta name="description" content="Quasar for Windows: guided ADB backups, full phone images, compression comparison and encrypted cloud upload.">
+<link rel="icon" href="logo.png">
+<style>
+:root{--bg:#07091a;--card:#10142b;--line:#232a52;--text:#e8ebff;--mute:#8d95c4;--a:#7c5cff;--b:#35d0ff}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.6 "Segoe UI",system-ui,sans-serif;color:var(--text);
+background:radial-gradient(1200px 600px at 70% -10%,#2a1f6b55,transparent),radial-gradient(900px 500px at 0% 30%,#0b3b6b44,transparent),var(--bg)}
+a{color:var(--b)}
+.wrap{max-width:1000px;margin:0 auto;padding:0 22px}
+nav{display:flex;align-items:center;gap:12px;padding:18px 0}
+nav img{width:36px;height:36px;border-radius:8px}
+nav b{font-size:18px;letter-spacing:.5px}nav span{flex:1}
+.btn{display:inline-block;padding:11px 22px;border-radius:10px;background:linear-gradient(135deg,var(--a),var(--b));color:#fff;text-decoration:none;font-weight:600;box-shadow:0 0 24px #7c5cff55}
+.btn.ghost{background:transparent;border:1px solid var(--line);box-shadow:none;color:var(--text)}
+.hero{text-align:center;padding:56px 0 40px}
+.hero img{width:150px;filter:drop-shadow(0 0 30px #7c5cffaa)}
+h1{font-size:44px;line-height:1.15;margin:18px 0 10px}
+.hero p{color:var(--mute);max-width:640px;margin:0 auto 24px;font-size:18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
+.card h3{margin:0 0 6px}.card p{margin:0;color:var(--mute)}
+h2{font-size:28px;margin:56px 0 18px;text-align:center}
+.price{font-size:34px;font-weight:700}.price small{font-size:14px;color:var(--mute);font-weight:400}
+.tier ul{padding-left:18px;color:var(--mute);margin:12px 0 18px}
+.tier.hot{border-color:var(--a);box-shadow:0 0 30px #7c5cff33}
+.tier .btn{display:block;text-align:center}
+.note{color:var(--mute);font-size:14px;text-align:center;max-width:720px;margin:22px auto 0}
+ol{color:var(--mute)}ol b{color:var(--text)}
+footer{margin:64px 0 28px;padding-top:22px;border-top:1px solid var(--line);color:var(--mute);font-size:14px;text-align:center}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav><img src="logo.png" alt=""><b>Quasar Labs</b><span></span><a href="#pricing">Pricing</a></nav>
+
+<section class="hero">
+<img src="logo.png" alt="Quasar logo">
+<h1>Back up and image your Android phone from Windows</h1>
+<p>Quasar walks you through every step of a backup over ADB, creates full partition images you can restore, compares compression formats on your own data, and uploads encrypted copies to the cloud.</p>
+<a class="btn" href="#pricing">Get Quasar</a>
+<a class="btn ghost" href="#features">See features</a>
+</section>
+
+<section id="features">
+<h2>What it does</h2>
+<div class="grid">
+<div class="card"><h3>Guided backup</h3><p>Step-by-step help connecting your phone, enabling USB debugging and approving the backup on-screen.</p></div>
+<div class="card"><h3>Full phone images</h3><p>Partition-level images with checksums and a manifest. Restore from recovery or with root, with a read-back check after every write.</p></div>
+<div class="card"><h3>Compression Lab</h3><p>Compare Zstandard, Gzip, Bzip2, XZ, ZIP and 7-Zip on size and speed, then use the winner for backups and images.</p></div>
+<div class="card"><h3>Encrypted cloud upload</h3><p>Encrypt on your PC before anything leaves it. Upload to S3-compatible storage, a local folder and more.</p></div>
+<div class="card"><h3>Your data stays yours</h3><p>No account and no tracking. Backups go where you tell them to, and only you hold the passphrase.</p></div>
+<div class="card"><h3>Made for Windows</h3><p>A native desktop app that runs without an installer: unzip it and launch.</p></div>
+</div>
+</section>
+
+<section id="pricing">
+<h2>Pricing</h2>
+<div class="grid">
+<div class="card tier"><h3>Free</h3><div class="price">$0</div>
+<ul><li>15 backups per month</li><li>2 GB cloud upload per month</li><li>Every format and tool</li></ul>
+<a class="btn ghost" href="mailto:quasarlabs-inc@outlook.com?subject=Quasar%20Free%20download">Ask for the free download</a></div>
+<div class="card tier"><h3>Supporter</h3><div class="price">$10</div>
+<ul><li>Unlimited backups</li><li>50 GB cloud upload per month</li><li>Supports development</li></ul>
+<a class="btn" href="https://quasarlabs3.gumroad.com/l/qygwf">Buy Supporter</a></div>
+<div class="card tier hot"><h3>Pro</h3><div class="price">$25 <small>one-time</small></div>
+<ul><li>Unlimited backups</li><li>Unlimited cloud upload</li><li>One payment, no subscription</li></ul>
+<a class="btn" href="https://quasarlabs3.gumroad.com/l/qwjtj">Buy Pro</a></div>
+</div>
+<p class="note">Payments are handled by Gumroad. After purchase you receive a download and a license key. Open the License page in Quasar, paste the key and click Activate.</p>
+</section>
+
+<section>
+<h2>Getting started</h2>
+<ol>
+<li><b>Download</b> the zip from your Gumroad receipt and unzip it anywhere.</li>
+<li><b>Run</b> Quasar.exe and follow the Guided backup page.</li>
+<li><b>Activate</b> your license on the License page (optional for the Free plan).</li>
+</ol>
+</section>
+
+<footer>
+Copyright &copy; 2026 Quasar Labs. All rights reserved. Quasar is proprietary software; see the license included in the download.<br>
+Support: <a href="mailto:quasarlabs-inc@outlook.com">quasarlabs-inc@outlook.com</a>
+</footer>
+</div>
+</body>
+</html>
