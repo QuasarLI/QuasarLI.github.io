@@ -32,6 +32,9 @@ h2{font-size:28px;margin:56px 0 18px;text-align:center}
 .tier .btn{display:block;text-align:center}
 .note{color:var(--mute);font-size:14px;text-align:center;max-width:720px;margin:22px auto 0}
 ol{color:var(--mute)}ol b{color:var(--text)}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{padding:9px 10px;text-align:left;border-bottom:1px solid var(--line)}
+th{color:var(--b);font-weight:600}td{color:var(--mute)}td:first-child{color:var(--text);font-weight:600}
 footer{margin:64px 0 28px;padding-top:22px;border-top:1px solid var(--line);color:var(--mute);font-size:14px;text-align:center}
 </style>
 </head>
@@ -82,6 +85,26 @@ footer{margin:64px 0 28px;padding-top:22px;border-top:1px solid var(--line);colo
 <li><b>Run</b> Quasar.exe and follow the Guided backup page.</li>
 <li><b>Activate</b> your license on the License page (optional for the Free plan).</li>
 </ol>
+</section>
+
+<section id="formats">
+<h2>Compression formats</h2>
+<div class="card" style="overflow-x:auto">
+<table>
+<thead><tr><th>Format</th><th>Fast</th><th>Balanced</th><th>Max</th><th>Best for</th><th>Backups</th><th>Phone images</th></tr></thead>
+<tbody>
+<tr><td>Zstandard</td><td>L3</td><td>L12</td><td>L19</td><td>Best ratio-to-speed; the recommended default</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>Zstandard Ultra</td><td>-</td><td>-</td><td>L22</td><td>Smallest Zstandard output; slowest</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>TAR + Gzip</td><td>L1</td><td>L6</td><td>L9</td><td>Universal compatibility</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>TAR + Bzip2</td><td>L1</td><td>L5</td><td>L9</td><td>Good ratio, slow</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>TAR + XZ</td><td>L1</td><td>L6</td><td>L9</td><td>Very small, very slow</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>ZIP (Deflate)</td><td>L1</td><td>L6</td><td>L9</td><td>Opens everywhere on Windows</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>7-Zip (LZMA2)</td><td>L1</td><td>L5</td><td>L9</td><td>Strong ratio; needs 7-Zip to open</td><td>Yes</td><td>No</td></tr>
+<tr><td>No compression</td><td colspan="3">Stored as-is</td><td>Fastest, largest</td><td>Yes</td><td>Yes</td></tr>
+</tbody>
+</table>
+</div>
+<p class="note">Not sure which to pick? The Compression Lab runs the formats you choose on your own data, compares size, compression speed and decompression speed, and a single click applies the winner to your backups and phone images. 7-Zip is not offered for phone images because the format can't be written as a continuous stream from the phone.</p>
 </section>
 
 <footer>
