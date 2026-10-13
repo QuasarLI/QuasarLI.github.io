@@ -1,12 +1,12 @@
 {
-    "version":  "0.3.1",
+    "version":  "0.3.2",
     "windows":  {
-                    "url":  "https://github.com/QuasarLI/QuasarLI.github.io/releases/download/v0.3.1/Quasar-Windows-0.3.1.zip",
-                    "sha256":  "d0b4208bac3dac47916eed3190f88bbe2ac96854906d2c39c27a9349a3d306e3"
+                    "url":  "https://github.com/QuasarLI/QuasarLI.github.io/releases/download/v0.3.2/Quasar-Windows-0.3.2.zip",
+                    "sha256":  "780002159d27bb77d9bf87bbe6300c65e329bce2497d98fb8ca330dc821a34fb"
                 },
     "android":  {
-                    "versionCode":  4,
-                    "url":  "https://github.com/QuasarLI/QuasarLI.github.io/releases/download/v0.3.1/Quasar-Android-0.3.1.apk",
-                    "sha256":  "d3a7f813c0c01c446260fca5f6c05a4eecd99da6e526d50e883b89fbc9c71394"
+                    "versionCode":  5,
+                    "url":  "https://github.com/QuasarLI/QuasarLI.github.io/releases/download/v0.3.2/Quasar-Android-0.3.2.apk",
+                    "sha256":  "6940b502a6d5449416dfce5d6db452a60ea58a1a39aca8c2828c5e9d5eaf0994"
                 }
 }
