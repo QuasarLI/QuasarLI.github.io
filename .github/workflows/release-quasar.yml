@@ -1,0 +1,81 @@
+name: Sign and publish Quasar release
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirmation:
+        description: Type "publish v0.4.0" after staging the eight ZIPs on a draft v0.4.0 release
+        required: true
+        type: string
+
+permissions: {}
+
+concurrency:
+  group: quasar-v0.4.0-release
+  cancel-in-progress: false
+
+jobs:
+  sign-and-publish:
+    if: github.ref == 'refs/heads/main' && inputs.confirmation == 'publish v0.4.0'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      id-token: write
+    env:
+      GH_TOKEN: ${{ github.token }}
+      RELEASE_TAG: v0.4.0
+      SIGNING_IDENTITY: https://github.com/QuasarLI/QuasarLI.github.io/.github/workflows/release-quasar.yml@refs/heads/main
+      OIDC_ISSUER: https://token.actions.githubusercontent.com
+    steps:
+      - name: Check out the trusted release policy
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+        with:
+          persist-credentials: false
+
+      - name: Require the exact draft release
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(gh release view "$RELEASE_TAG" --json isDraft --jq .isDraft)" = "true"
+          test "$(gh release view "$RELEASE_TAG" --json tagName --jq .tagName)" = "$RELEASE_TAG"
+          test "$(gh release view "$RELEASE_TAG" --json targetCommitish --jq .targetCommitish)" = "main"
+          mkdir release
+          gh release download "$RELEASE_TAG" --dir release
+          python scripts/validate_quasar_release.py inputs release
+
+      - name: Create the checksum manifest
+        run: python scripts/validate_quasar_release.py manifest release
+
+      - name: Sign and verify the exact release files
+        uses: sigstore/gh-action-sigstore-python@5b79a39c381910c090341a2c9b0bf022c8b387e1 # v3.4.0
+        with:
+          inputs: |
+            release/*.zip
+            release/SHA256SUMS.txt
+          verify: true
+          verify-cert-identity: ${{ env.SIGNING_IDENTITY }}
+          verify-oidc-issuer: ${{ env.OIDC_ISSUER }}
+          release-signing-artifacts: false
+          upload-signing-artifacts: false
+
+      - name: Require complete signed outputs
+        run: python scripts/validate_quasar_release.py signed release
+
+      - name: Attach integrity files
+        shell: bash
+        run: |
+          set -euo pipefail
+          gh release upload "$RELEASE_TAG" \
+            release/SHA256SUMS.txt \
+            release/*.sigstore.json \
+            --clobber
+
+      - name: Verify final release assets
+        shell: bash
+        run: |
+          set -euo pipefail
+          gh release download "$RELEASE_TAG" --dir final-assets
+          python scripts/validate_quasar_release.py signed final-assets
+
+      - name: Publish the complete release
+        run: gh release edit "$RELEASE_TAG" --draft=false --latest
