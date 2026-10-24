@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">TaskForge task and precision icon</title>
+  <defs><linearGradient id="g" x1="10" y1="8" x2="54" y2="56"><stop stop-color="#54e4ce"/><stop offset="1" stop-color="#3378e8"/></linearGradient></defs>
+  <rect x="10" y="7" width="44" height="50" rx="12" fill="#101b31" stroke="url(#g)" stroke-width="3"/>
+  <rect x="18" y="16" width="10" height="10" rx="3" fill="url(#g)"/>
+  <path d="m20.5 21 2 2 4-5" fill="none" stroke="#061514" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M34 21h12M18 34h28M18 43h20" stroke="#dffbff" stroke-width="3.2" stroke-linecap="round"/>
+  <path d="m46 37 1.4 4.1 4.1 1.4-4.1 1.4L46 48l-1.4-4.1-4.1-1.4 4.1-1.4L46 37Z" fill="#54e4ce"/>
+</svg>
