@@ -16,6 +16,9 @@
     <path d="M947 136c-12 50-33 85-45 114" fill="none" stroke="#fff" stroke-width="11" stroke-linecap="round" opacity=".72"/>
   </g>
   <path d="M783 288c59 66 275 66 334 0" fill="none" stroke="url(#orbit)" stroke-width="13" stroke-linecap="round" transform="rotate(-28 950 288)"/>
+  <path d="m1033 114 10 22 24 7-24 8-10 21-10-21-24-8 24-7 10-22Z" fill="#eaffdc" opacity=".78"/>
+  <circle cx="820" cy="402" r="5" fill="#b9f27c" opacity=".65"/>
+  <circle cx="1085" cy="374" r="4" fill="#efffe1" opacity=".5"/>
   <circle cx="1084" cy="190" r="14" fill="#a8ef65" stroke="#061109" stroke-width="8"/>
   <circle cx="190" cy="144" r="8" fill="#a8ef65"/><path d="M210 144h55" stroke="#a8ef65" stroke-width="4"/>
   <text x="295" y="155" fill="#a9a6c0" font-family="Arial,sans-serif" font-size="26" font-weight="700" letter-spacing="4">BETA · INDEPENDENT SOFTWARE STUDIO</text>
