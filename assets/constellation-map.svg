@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 520" role="img" aria-labelledby="title desc">
+  <title id="title">Quasar Labs project constellation</title>
+  <desc id="desc">A central tilted quasar connects to three distinct project nodes.</desc>
+  <defs>
+    <radialGradient id="field" cx="48%" cy="46%" r="62%"><stop stop-color="#193b2a"/><stop offset=".62" stop-color="#091b12"/><stop offset="1" stop-color="#030a06"/></radialGradient>
+    <linearGradient id="route" x1="96" y1="430" x2="627" y2="92" gradientUnits="userSpaceOnUse"><stop stop-color="#33d17a"/><stop offset=".52" stop-color="#91dc55"/><stop offset="1" stop-color="#e4ffc3"/></linearGradient>
+    <linearGradient id="core" x1="314" y1="173" x2="407" y2="350" gradientUnits="userSpaceOnUse"><stop stop-color="#fbfff6"/><stop offset=".23" stop-color="#cde7bd"/><stop offset=".55" stop-color="#5a9f67"/><stop offset=".82" stop-color="#163825"/><stop offset="1" stop-color="#79c96a"/></linearGradient>
+    <filter id="glow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="14"/></filter>
+  </defs>
+  <rect x="4" y="4" width="712" height="512" rx="42" fill="url(#field)" stroke="#315a3e" stroke-width="2"/>
+  <g fill="none" stroke="#79c96a" stroke-opacity=".18">
+    <circle cx="360" cy="260" r="182"/><circle cx="360" cy="260" r="128"/>
+    <path d="M72 109h576M72 411h576M126 64v392M594 64v392" stroke-dasharray="3 12"/>
+  </g>
+  <g fill="none" stroke="url(#route)" stroke-width="2.5" stroke-linecap="round">
+    <path d="M350 250C278 186 215 145 132 130"/>
+    <path d="M372 251c82-67 143-84 225-73"/>
+    <path d="M355 277c-18 70-74 107-149 130"/>
+  </g>
+  <g>
+    <circle cx="132" cy="130" r="30" fill="#0d2619" stroke="#80d16f" stroke-width="2"/>
+    <path d="M117 130h30M132 115v30" stroke="#b9f27c" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="597" cy="178" r="30" fill="#0d2619" stroke="#80d16f" stroke-width="2"/>
+    <path d="m584 178 9 9 17-19" fill="none" stroke="#b9f27c" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="206" cy="407" r="30" fill="#0d2619" stroke="#80d16f" stroke-width="2"/>
+    <path d="M193 414c7-20 19-26 29-28-2 13-9 26-29 28Z" fill="#79c96a"/><path d="m195 412 23-21" stroke="#e4ffc3" stroke-width="2"/>
+  </g>
+  <ellipse cx="360" cy="260" rx="108" ry="37" fill="none" stroke="#79d86d" stroke-width="24" opacity=".12" filter="url(#glow)" transform="rotate(-28 360 260)"/>
+  <ellipse cx="360" cy="260" rx="108" ry="37" fill="none" stroke="url(#route)" stroke-width="8" transform="rotate(-28 360 260)"/>
+  <g transform="rotate(-28 360 260)">
+    <path d="M360 153c-9 40-28 66-38 92 20 7 56 7 76 0-10-26-29-52-38-92Z" fill="url(#core)" stroke="#efffe1" stroke-opacity=".2" stroke-width="2"/>
+    <path d="M322 275c20-7 56-7 76 0-14 24-29 49-38 90-9-41-24-66-38-90Z" fill="url(#core)" stroke="#b9f27c" stroke-opacity=".16" stroke-width="2"/>
+  </g>
+  <path d="M258 260c37 43 167 43 204 0" fill="none" stroke="url(#route)" stroke-width="8" stroke-linecap="round" transform="rotate(-28 360 260)"/>
+  <circle cx="449" cy="194" r="9" fill="#a8ef65" stroke="#061109" stroke-width="5"/>
+  <g fill="#eaffdc">
+    <circle cx="92" cy="261" r="2.5" opacity=".65"/><circle cx="560" cy="365" r="2" opacity=".5"/><circle cx="648" cy="296" r="3" opacity=".6"/>
+    <path d="m500 83 4 9 10 3-10 3-4 9-4-9-10-3 10-3 4-9Z" opacity=".75"/>
+  </g>
+</svg>
