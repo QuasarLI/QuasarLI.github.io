@@ -51,7 +51,7 @@ window.addEventListener("scroll", updateProgress, { passive: true });
 window.addEventListener("resize", updateProgress);
 
 const revealItems = document.querySelectorAll(
-  ".section-heading, .project-card, .status-row, .precision-item, .detail-grid article, .contact-card, .link-group"
+  ".section-heading, .project-card, .status-row, .precision-item, .detail-grid article, .contact-card, .link-group, .network-points > div, .flow-grid li, .question-list details"
 );
 
 revealItems.forEach((element) => element.classList.add("reveal-item"));
