@@ -1,5 +1,6 @@
 const menuButton = document.querySelector(".menu-button");
 const navLinks = document.querySelector(".nav-links");
+const themeSelect = document.querySelector("#theme-select");
 
 if (menuButton && navLinks) {
   menuButton.addEventListener("click", () => {
@@ -12,6 +13,18 @@ if (menuButton && navLinks) {
     if (event.target.closest("a")) {
       menuButton.setAttribute("aria-expanded", "false");
       navLinks.classList.remove("open");
+    }
+  });
+}
+
+if (themeSelect) {
+  themeSelect.value = window.quasarTheme || document.documentElement.dataset.theme || "obsidian";
+  themeSelect.addEventListener("change", () => {
+    document.documentElement.dataset.theme = themeSelect.value;
+    try {
+      sessionStorage.setItem("quasar-theme", themeSelect.value);
+    } catch {
+      // Theme switching still works for the current page without storage.
     }
   });
 }
