@@ -1,6 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
   <defs><radialGradient id="bg" cx="85%" cy="10%" r="90%"><stop stop-color="#392b7d"/><stop offset=".65" stop-color="#17152d"/></radialGradient><linearGradient id="g" x1="850" y1="160" x2="1050" y2="380"><stop stop-color="#7b5bf0"/><stop offset="1" stop-color="#4a2daf"/></linearGradient></defs>
-  <rect width="1200" height="630" fill="url(#bg)"/><circle cx="950" cy="280" r="120" fill="none" stroke="url(#g)" stroke-width="48"/><path d="m1020 360 105 105" stroke="#30cbb5" stroke-width="48" stroke-linecap="round"/>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="812" y="142" width="276" height="276" rx="72" fill="#090c18" stroke="#4b5184" stroke-width="6"/>
+  <circle cx="944" cy="274" r="82" fill="none" stroke="url(#g)" stroke-width="28"/>
+  <circle cx="944" cy="274" r="51" fill="none" stroke="#fff" stroke-opacity=".1" stroke-width="5"/>
+  <path d="m989 319 62 62" stroke="#30cbb5" stroke-width="30" stroke-linecap="round"/>
+  <path d="m866 167 10 29 29 10-29 10-10 29-10-29-29-10 29-10 10-29Z" fill="#fff"/>
+  <circle cx="1045" cy="186" r="10" fill="#30cbb5"/>
   <circle cx="190" cy="144" r="8" fill="#30cbb5"/><path d="M210 144h55" stroke="#30cbb5" stroke-width="4"/>
   <text x="295" y="155" fill="#a9a6c0" font-family="Arial,sans-serif" font-size="26" font-weight="700" letter-spacing="4">BETA · INDEPENDENT SOFTWARE STUDIO</text>
   <text x="180" y="295" fill="#fff" font-family="Arial,sans-serif" font-size="78" font-weight="700">Quasar Labs</text><text x="180" y="385" fill="#cac7dc" font-family="Georgia,serif" font-size="51">Excellence through precision.</text>
