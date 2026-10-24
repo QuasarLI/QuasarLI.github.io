@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import json
 from pathlib import Path, PurePosixPath
 import sys
 import zipfile
@@ -15,6 +16,15 @@ ZIP_NAMES = tuple(
     for edition in EDITIONS
 )
 MANIFEST_NAME = "SHA256SUMS.txt"
+EDITION_IDS = ("free", "free-ads", "supporter", "pro")
+EDITION_LABELS = {
+    "free": "Quasar Free",
+    "free-ads": "Quasar Free with Ads",
+    "supporter": "Quasar Supporter",
+    "pro": "Quasar Pro",
+}
+ANDROID_ABIS = {"arm64-v8a", "armeabi-v7a", "x86", "x86_64"}
+ANDROID_APPLICATION_ID = "com.quasar.mobile"
 
 
 def fail(message: str) -> None:
@@ -89,22 +99,117 @@ def validate_signed_outputs(directory: Path) -> None:
         fail("SHA256SUMS.txt does not match the exact release ZIP bytes")
 
 
+def validate_android_report(path: Path) -> None:
+    if not path.is_file():
+        fail(f"Android verification report does not exist: {path}")
+    try:
+        report = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        fail(f"invalid Android verification report: {exc}")
+    if not isinstance(report, list) or len(report) != len(EDITION_IDS):
+        fail("Android verification report must contain exactly four edition records")
+
+    records = {}
+    for record in report:
+        if not isinstance(record, dict) or not isinstance(record.get("edition"), str):
+            fail("Android verification report contains an invalid edition record")
+        edition = record["edition"]
+        if edition in records:
+            fail(f"Android verification report repeats edition {edition}")
+        records[edition] = record
+    if set(records) != set(EDITION_IDS):
+        fail(
+            "Android verification editions do not match contract; "
+            f"found={sorted(records)}"
+        )
+
+    signers = set()
+    for edition in EDITION_IDS:
+        record = records[edition]
+        expected = {
+            "version": VERSION,
+            "versionCode": 6,
+            "minSdk": 26,
+            "targetSdk": 35,
+            "applicationId": ANDROID_APPLICATION_ID,
+            "applicationLabel": EDITION_LABELS[edition],
+            "sameSignerAs032": True,
+            "zipalign16KB": True,
+            "native16KBStaticCompatible": True,
+        }
+        for key, value in expected.items():
+            if record.get(key) != value:
+                fail(
+                    f"Android {edition} failed {key}: "
+                    f"expected {value!r}, found {record.get(key)!r}"
+                )
+        if set(record.get("abis", {})) != ANDROID_ABIS:
+            fail(
+                f"Android {edition} ABI set does not match contract: "
+                f"{sorted(record.get('abis', {}))}"
+            )
+        apk_hash = record.get("sha256")
+        if not isinstance(apk_hash, str) or len(apk_hash) != 64:
+            fail(f"Android {edition} has an invalid APK SHA-256")
+        signer = record.get("signerSHA256")
+        if not isinstance(signer, str) or len(signer) != 64:
+            fail(f"Android {edition} has an invalid signer SHA-256")
+        signers.add(signer.lower())
+
+        expected_libraries = {
+            (abi, library)
+            for abi, libraries in record["abis"].items()
+            for library in libraries
+        }
+        native_libraries = record.get("nativeLibraries")
+        if not isinstance(native_libraries, list):
+            fail(f"Android {edition} has no per-library native verification")
+        verified_libraries = set()
+        for library in native_libraries:
+            if not isinstance(library, dict):
+                fail(f"Android {edition} has an invalid native-library record")
+            identity = (library.get("abi"), Path(str(library.get("file"))).name)
+            if identity in verified_libraries:
+                fail(f"Android {edition} repeats native library {identity}")
+            verified_libraries.add(identity)
+            for key in ("load16KB", "relro16KB"):
+                if library.get(key) is not True:
+                    fail(
+                        f"Android {edition} native library {library.get('file')} "
+                        f"failed {key}"
+                    )
+        if verified_libraries != expected_libraries:
+            fail(
+                f"Android {edition} per-library verification does not match "
+                "the APK ABI inventory"
+            )
+
+    if len(signers) != 1:
+        fail("Android editions are not signed by one consistent certificate")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("mode", choices=("inputs", "manifest", "signed"))
-    parser.add_argument("directory", type=Path)
+    parser.add_argument(
+        "mode", choices=("inputs", "manifest", "signed", "android-report")
+    )
+    parser.add_argument("path", type=Path)
     args = parser.parse_args()
 
-    if not args.directory.is_dir():
-        fail(f"release directory does not exist: {args.directory}")
+    if args.mode == "android-report":
+        validate_android_report(args.path)
+        return
+
+    if not args.path.is_dir():
+        fail(f"release directory does not exist: {args.path}")
 
     if args.mode == "inputs":
-        validate_inputs(args.directory)
+        validate_inputs(args.path)
     elif args.mode == "manifest":
-        validate_inputs(args.directory)
-        write_manifest(args.directory)
+        validate_inputs(args.path)
+        write_manifest(args.path)
     else:
-        validate_signed_outputs(args.directory)
+        validate_signed_outputs(args.path)
 
 
 if __name__ == "__main__":

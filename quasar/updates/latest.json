@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 2,
+  "version": "0.4.0",
+  "windows": {
+    "version": "0.4.0",
+    "url": "https://github.com/QuasarLI/QuasarLI.github.io/releases/download/v0.4.0/Quasar-Windows-Free-0.4.0.zip",
+    "sha256": "3f1a059715fe5d601b362c82b5bf9e88fc012e738180a76387dfc1ccae38a222",
+    "editions": {
+      "free": {
+        "version": "0.4.0",
+        "url": "https://github.com/QuasarLI/QuasarLI.github.io/releases/download/v0.4.0/Quasar-Windows-Free-0.4.0.zip",
+        "sha256": "3f1a059715fe5d601b362c82b5bf9e88fc012e738180a76387dfc1ccae38a222",
+        "sigstoreBundle": "https://github.com/QuasarLI/QuasarLI.github.io/releases/download/v0.4.0/Quasar-Windows-Free-0.4.0.zip.sigstore.json"
+      },
+      "free-ads": {
+        "version": "0.4.0",
+        "url": "https://github.com/QuasarLI/QuasarLI.github.io/releases/download/v0.4.0/Quasar-Windows-Free-with-Ads-0.4.0.zip",
+        "sha256": "6b5429960bec35f3204befeae69eea5a650a01580a7527b05e151df8770ea027",
+        "sigstoreBundle": "https://github.com/QuasarLI/QuasarLI.github.io/releases/download/v0.4.0/Quasar-Windows-Free-with-Ads-0.4.0.zip.sigstore.json"
+      },
+      "supporter": {
+        "version": "0.4.0",
+        "url": "https://github.com/QuasarLI/QuasarLI.github.io/releases/download/v0.4.0/Quasar-Windows-Supporter-0.4.0.zip",
+        "sha256": "2d2c1a497cbef67731edfaf479203b3ca85c1303db2afbeccea9ef51f206cd09",
+        "sigstoreBundle": "https://github.com/QuasarLI/QuasarLI.github.io/releases/download/v0.4.0/Quasar-Windows-Supporter-0.4.0.zip.sigstore.json"
+      },
+      "pro": {
+        "version": "0.4.0",
+        "url": "https://github.com/QuasarLI/QuasarLI.github.io/releases/download/v0.4.0/Quasar-Windows-Pro-0.4.0.zip",
+        "sha256": "30f035350e57ddd99b4382e42e5ba7ec72af90780fa60f30ddde419f3408619e",
+        "sigstoreBundle": "https://github.com/QuasarLI/QuasarLI.github.io/releases/download/v0.4.0/Quasar-Windows-Pro-0.4.0.zip.sigstore.json"
+      }
+    }
+  },
+  "android": {
+    "version": "0.3.2",
+    "versionCode": 5,
+    "url": "https://github.com/QuasarLI/QuasarLI.github.io/releases/download/v0.3.3/Quasar-Android-0.3.2.apk",
+    "sha256": "6940b502a6d5449416dfce5d6db452a60ea58a1a39aca8c2828c5e9d5eaf0994",
+    "editions": {
+      "free": {
+        "version": "0.4.0",
+        "versionCode": 6,
+        "url": "https://github.com/QuasarLI/QuasarLI.github.io/releases/download/v0.4.0/Quasar-Android-Free-0.4.0.zip",
+        "sha256": "42a16b58af3a3f9b003f7e41261a464c9fafe1acefc30229e07420d1c27b6411",
+        "apkFile": "Quasar-Android-Free-0.4.0.apk",
+        "apkSha256": "6ef6c99454022ba57834a62fc23ddaca9bcf1e1ad3a9898dbb2a59f8ec9c6568",
+        "sigstoreBundle": "https://github.com/QuasarLI/QuasarLI.github.io/releases/download/v0.4.0/Quasar-Android-Free-0.4.0.zip.sigstore.json"
+      },
+      "free-ads": {
+        "version": "0.4.0",
+        "versionCode": 6,
+        "url": "https://github.com/QuasarLI/QuasarLI.github.io/releases/download/v0.4.0/Quasar-Android-Free-with-Ads-0.4.0.zip",
+        "sha256": "9923d6033e813dc5b3e8b773d08eb6f6754582a977126d19dfe60a3832adaaa0",
+        "apkFile": "Quasar-Android-Free-with-Ads-0.4.0.apk",
+        "apkSha256": "63b1cf43bc0a67403a2c4092f5cc9fc5c337b7488ea8d1daf10d747178a7e6ad",
+        "sigstoreBundle": "https://github.com/QuasarLI/QuasarLI.github.io/releases/download/v0.4.0/Quasar-Android-Free-with-Ads-0.4.0.zip.sigstore.json"
+      },
+      "supporter": {
+        "version": "0.4.0",
+        "versionCode": 6,
+        "url": "https://github.com/QuasarLI/QuasarLI.github.io/releases/download/v0.4.0/Quasar-Android-Supporter-0.4.0.zip",
+        "sha256": "59c29ccfb1e2b7556ced679e2a5d73f0cfa9439c904b6ceae8a61de338e2cf45",
+        "apkFile": "Quasar-Android-Supporter-0.4.0.apk",
+        "apkSha256": "c57e0a088a3be2d75d2e114ee842d7d14e61c4285ba4362c6f2f0655f885c6cc",
+        "sigstoreBundle": "https://github.com/QuasarLI/QuasarLI.github.io/releases/download/v0.4.0/Quasar-Android-Supporter-0.4.0.zip.sigstore.json"
+      },
+      "pro": {
+        "version": "0.4.0",
+        "versionCode": 6,
+        "url": "https://github.com/QuasarLI/QuasarLI.github.io/releases/download/v0.4.0/Quasar-Android-Pro-0.4.0.zip",
+        "sha256": "20bd7f50ea6695353e7f776f37072e8f993b1257105b197090096ce92a962515",
+        "apkFile": "Quasar-Android-Pro-0.4.0.apk",
+        "apkSha256": "cf435163bde3431e94c0daf0cd473b2829877812b76ddef347bcba8ff280ac60",
+        "sigstoreBundle": "https://github.com/QuasarLI/QuasarLI.github.io/releases/download/v0.4.0/Quasar-Android-Pro-0.4.0.zip.sigstore.json"
+      }
+    }
+  }
+}
