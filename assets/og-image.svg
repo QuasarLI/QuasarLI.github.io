@@ -2,11 +2,14 @@
   <defs><radialGradient id="bg" cx="85%" cy="10%" r="90%"><stop stop-color="#392b7d"/><stop offset=".65" stop-color="#17152d"/></radialGradient><linearGradient id="g" x1="850" y1="160" x2="1050" y2="380"><stop stop-color="#7b5bf0"/><stop offset="1" stop-color="#4a2daf"/></linearGradient></defs>
   <rect width="1200" height="630" fill="url(#bg)"/>
   <rect x="812" y="142" width="276" height="276" rx="72" fill="#090c18" stroke="#4b5184" stroke-width="6"/>
-  <path d="m840 375 72-54m64-51 72-54" stroke="url(#g)" stroke-width="23" stroke-linecap="round"/>
-  <ellipse cx="944" cy="280" rx="112" ry="62" fill="none" stroke="url(#g)" stroke-width="15" stroke-dasharray="440 65" transform="rotate(-23 944 280)"/>
-  <path d="m944 178 23 79 79 23-79 23-23 79-23-79-79-23 79-23 23-79Z" fill="#f7f5ff"/>
-  <circle cx="944" cy="280" r="27" fill="#fff"/>
-  <circle cx="1034" cy="222" r="11" fill="#30cbb5" stroke="#090c18" stroke-width="7"/>
+  <path d="M944 164v235" stroke="#d8d3ff" stroke-opacity=".14" stroke-width="4"/>
+  <rect x="923" y="166" width="42" height="20" rx="9" fill="#cbd1e2"/>
+  <path d="m921 186 46 0 12 36h-70l12-36Z" fill="url(#g)"/>
+  <path d="M944 205c-52 11-81 43-87 82 32 19 142 19 174 0-6-39-35-71-87-82Z" fill="url(#g)" stroke="#f3f5ff" stroke-opacity=".45" stroke-width="5"/>
+  <path d="M867 288c17 35 50 51 68 63l5 58c1 12 7 12 8 0l5-58c18-12 51-28 68-63-43 14-111 14-154 0Z" fill="#161b2a" stroke="#747e9f" stroke-width="4"/>
+  <ellipse cx="944" cy="287" rx="128" ry="42" fill="none" stroke="url(#g)" stroke-width="14" stroke-dasharray="455 62" transform="rotate(-8 944 287)"/>
+  <circle cx="944" cy="287" r="13" fill="#fff"/>
+  <circle cx="1064" cy="270" r="11" fill="#30cbb5" stroke="#090c18" stroke-width="7"/>
   <circle cx="190" cy="144" r="8" fill="#30cbb5"/><path d="M210 144h55" stroke="#30cbb5" stroke-width="4"/>
   <text x="295" y="155" fill="#a9a6c0" font-family="Arial,sans-serif" font-size="26" font-weight="700" letter-spacing="4">BETA · INDEPENDENT SOFTWARE STUDIO</text>
   <text x="180" y="295" fill="#fff" font-family="Arial,sans-serif" font-size="78" font-weight="700">Quasar Labs</text><text x="180" y="385" fill="#cac7dc" font-family="Georgia,serif" font-size="51">Excellence through precision.</text>

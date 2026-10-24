@@ -17,6 +17,12 @@
         <div class="detail-card-head"><div><p class="kicker">Productivity · Windows</p><h2>TaskForge</h2></div><span class="status available">Stable + beta</span></div>
         <p>TaskForge brings system health information and practical controls into one desktop utility. The v2.2 beta explains live CPU, memory, commit pressure, and top processes; it can also request native Windows battery and energy reports without changing system settings.</p>
         <p class="notice"><strong>Choose deliberately:</strong> <strong>v2.1.0</strong> is the latest stable release. <strong>v2.2.0-beta.1</strong> is a prerelease for early evaluation and may still contain unfinished behavior.</p>
+        <div class="capability-grid" aria-label="Verified TaskForge capabilities">
+          <article><span>Observe</span><h3>System Health</h3><p>Explains live CPU, memory, commit pressure, and top-process information in a dedicated view.</p></article>
+          <article><span>Report</span><h3>Native Windows reports</h3><p>Requests battery and energy reports without tuning or changing system settings.</p></article>
+          <article><span>Protect</span><h3>Deliberate safeguards</h3><p>Process safeguards, confirmations, and reversible settings remain part of the current edition model.</p></article>
+          <article><span>Compare</span><h3>Redacted snapshots</h3><p>The Pro edition can export a redacted telemetry snapshot for before-and-after comparison.</p></article>
+        </div>
 
         <section class="downloads-panel" id="downloads" aria-labelledby="downloads-title">
           <div class="downloads-heading"><div><p class="kicker">Public beta downloads</p><h3 id="downloads-title">Choose your Free edition</h3></div><span class="version-chip">v2.2.0-beta.1</span></div>
@@ -36,7 +42,15 @@
             </article>
           </div>
           <div class="download-resources"><a href="https://github.com/QuasarLI/TaskForge/releases/tag/v2.2.0-beta.1">Release notes ↗</a><a href="https://github.com/QuasarLI/TaskForge/releases/download/v2.2.0-beta.1/SHA256SUMS.txt">SHA-256 checksums ↗</a><a href="https://github.com/QuasarLI/TaskForge/issues">Beta feedback ↗</a></div>
-          <p class="verification-note">Each public ZIP also has a Sigstore verification bundle on the GitHub release page. Verify downloads before running software from any prerelease channel.</p>
+          <div class="integrity-panel">
+            <p class="kicker">Release integrity</p>
+            <dl>
+              <div><dt>Public ZIPs</dt><dd>Free and Free with Ads are the two public packages attached to the GitHub prerelease.</dd></div>
+              <div><dt>Checksums</dt><dd>The release includes a SHA-256 manifest so downloaded files can be checked for exact byte integrity.</dd></div>
+              <div><dt>Signing</dt><dd>Each public ZIP has a Sigstore keyless bundle, alongside GitHub build provenance, on the release page.</dd></div>
+              <div><dt>Paid delivery</dt><dd>Supporter and Pro are delivered through Gumroad and are not public GitHub release assets; this site does not claim the public beta signatures apply to them.</dd></div>
+            </dl>
+          </div>
         </section>
 
         <div class="stable-route"><div><strong>Prefer the stable channel?</strong><p>Use TaskForge v2.1.0 for the latest non-prerelease build.</p></div><a class="button secondary" href="https://github.com/QuasarLI/TaskForge/releases/latest">Get stable v2.1.0 ↗</a></div>
