@@ -1,17 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
-  <title id="title">Quasar Labs precision star mark</title>
+  <title id="title">Quasar Labs stellar orbit mark</title>
   <defs>
-    <linearGradient id="q" x1="13" y1="9" x2="53" y2="55" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#b9afff"/><stop offset=".48" stop-color="#7c68ff"/><stop offset="1" stop-color="#43e4cd"/>
-    </linearGradient>
-    <radialGradient id="space" cx="35%" cy="25%" r="85%">
-      <stop stop-color="#20254a"/><stop offset="1" stop-color="#090c18"/>
-    </radialGradient>
+    <radialGradient id="space" cx="38%" cy="28%" r="82%"><stop stop-color="#272b57"/><stop offset=".58" stop-color="#11152c"/><stop offset="1" stop-color="#070914"/></radialGradient>
+    <linearGradient id="orbit" x1="9" y1="50" x2="55" y2="13" gradientUnits="userSpaceOnUse"><stop stop-color="#43e4cd"/><stop offset=".52" stop-color="#8170ff"/><stop offset="1" stop-color="#d7d1ff"/></linearGradient>
+    <radialGradient id="star"><stop stop-color="#fff"/><stop offset=".35" stop-color="#dcd8ff"/><stop offset="1" stop-color="#8170ff"/></radialGradient>
   </defs>
-  <rect x="1" y="1" width="62" height="62" rx="17" fill="url(#space)" stroke="#343b68" stroke-width="2"/>
-  <circle cx="31" cy="30" r="17.5" fill="none" stroke="url(#q)" stroke-width="5.5"/>
-  <circle cx="31" cy="30" r="10.5" fill="none" stroke="#fff" stroke-opacity=".1"/>
-  <path d="m40.5 39.5 11 11" fill="none" stroke="url(#q)" stroke-width="6" stroke-linecap="round"/>
-  <path d="m17 9 1.8 5.2L24 16l-5.2 1.8L17 23l-1.8-5.2L10 16l5.2-1.8L17 9Z" fill="#fff"/>
-  <circle cx="50" cy="14" r="2" fill="#43e4cd"/>
+  <rect x="1" y="1" width="62" height="62" rx="17" fill="url(#space)" stroke="#3a4072" stroke-width="2"/>
+  <circle cx="32" cy="32" r="24" fill="none" stroke="#fff" stroke-opacity=".06"/>
+  <path d="M12 47 27 36M37 28l15-11" stroke="url(#orbit)" stroke-width="5" stroke-linecap="round" opacity=".82"/>
+  <ellipse cx="32" cy="32" rx="23" ry="13" fill="none" stroke="url(#orbit)" stroke-width="3.2" stroke-linecap="round" stroke-dasharray="91 14" transform="rotate(-23 32 32)"/>
+  <path d="m32 14 4.1 13.9L50 32l-13.9 4.1L32 50l-4.1-13.9L14 32l13.9-4.1L32 14Z" fill="url(#star)"/>
+  <circle cx="32" cy="32" r="4.7" fill="#fff"/>
+  <circle cx="50" cy="21" r="2.4" fill="#43e4cd" stroke="#0b0e20" stroke-width="1.5"/>
 </svg>
