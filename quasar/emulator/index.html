@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Test Quasar in an Android emulator on D: — Quasar Labs</title>
+  <meta name="description" content="A cautious, not-yet-executed procedure for testing Quasar in an Android emulator while keeping SDK, virtual-device, and Gradle data on D:.">
+  <link rel="canonical" href="https://quasarli.github.io/quasar/emulator/"><link rel="icon" href="/assets/favicon.svg?v=20261024-5" type="image/svg+xml"><script src="/assets/theme-init.js"></script><link rel="stylesheet" href="/assets/styles.css?v=20261024-6"><script src="/assets/site.js?v=20261024-3" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header"><nav class="nav shell" aria-label="Primary navigation"><a class="brand" href="/" aria-label="Quasar Labs home"><img src="/assets/mark.svg?v=20261024-5" alt="" width="34" height="34"><span class="brand-name">Quasar Labs</span><span class="beta-tag">Beta</span></a><button class="menu-button" type="button" aria-expanded="false" aria-controls="nav-links"><span class="sr-only">Toggle navigation</span><span aria-hidden="true">Menu</span></button><div class="nav-links" id="nav-links"><a href="/projects/">Projects</a><a href="/quasar/" aria-current="page">Quasar</a><a href="/links/">Links</a><a href="/support/">Support</a><a class="nav-cta" href="https://github.com/QuasarLI">GitHub ↗</a></div><label class="theme-picker"><span>Theme</span><select id="theme-select" aria-label="Site theme"><option value="obsidian">Obsidian</option><option value="deep-space">Deep Space</option><option value="graphite">Graphite</option><option value="aurora">Aurora</option><option value="nebula">Nebula</option><option value="solar-flare">Solar Flare</option></select></label></nav></header>
+  <main id="main">
+    <header class="page-hero shell"><p class="kicker">Android testing · planned procedure</p><h1>Keep the emulator on D:.</h1><p>This is a walkthrough for later—not a record of completed testing. No emulator, system image, virtual device, Windows feature, or firmware setting was installed or changed while preparing it.</p></header>
+    <section class="content-section shell"><div class="prose guide-prose">
+      <p class="notice"><strong>Compatibility boundary:</strong> Quasar v0.4.0 does not support Android configurations that require 16 KB memory pages. Use the emulator procedure below only for supported 4 KB-page testing. Run Android Emulator directly on Windows with Windows Hypervisor Platform, and use a disposable test device with no personal account or data. An emulator is not a security boundary and does not replace physical ARM64-device testing.</p>
+      <h2>1. Check the host first</h2><p>In Task Manager → Performance → CPU, confirm <strong>Virtualization: Enabled</strong>. If it is disabled, enable Intel VT-x or AMD SVM in firmware. When you are ready to proceed, enable <strong>Windows Hypervisor Platform</strong> in “Turn Windows features on or off” and restart if requested. Do not weaken Windows security to accommodate an obsolete acceleration driver.</p>
+      <h2>2. Direct large files to D:</h2><pre><code>$env:ANDROID_HOME = "D:\Tools\android-sdk"
+$env:ANDROID_USER_HOME = "D:\Tools\android-user"
+$env:ANDROID_AVD_HOME = "D:\Tools\android-avd"
+$env:GRADLE_USER_HOME = "D:\Tools\gradle-home"
+$env:JAVA_HOME = "D:\Tools\jdk-17.0.20.1+1"
+
+New-Item -ItemType Directory -Force `
+    $env:ANDROID_USER_HOME, $env:ANDROID_AVD_HOME | Out-Null</code></pre><p>These PowerShell variables last for that terminal only. If <code>ANDROID_SDK_ROOT</code> already exists, do not leave it pointing to a different SDK. Do not move or replace Quasar’s Android release keystore; the private app-signing key is unrelated to disposable emulator data.</p>
+      <h2>3. Download one emulator image when ready</h2><pre><code>$sdkmanager = "$env:ANDROID_HOME\cmdline-tools\latest\bin\sdkmanager.bat"
+&amp; $sdkmanager --sdk_root="$env:ANDROID_HOME" --licenses
+&amp; $sdkmanager --sdk_root="$env:ANDROID_HOME" `
+    "emulator" "platform-tools" "system-images;android-35;google_apis;x86_64"
+&amp; "$env:ANDROID_HOME\emulator\emulator.exe" -accel-check</code></pre><p>Review Google’s license prompts yourself. Allow roughly 15–25 GB on D: for an initial setup. Prefer an x86_64 image and confirm that every native dependency in the APK includes x86_64 support.</p>
+      <h2>4. Create and start a disposable phone</h2><pre><code>$avdmanager = "$env:ANDROID_HOME\cmdline-tools\latest\bin\avdmanager.bat"
+&amp; $avdmanager create avd -n "Quasar_API35" `
+    -k "system-images;android-35;google_apis;x86_64" `
+    -p "D:\Tools\android-avd\Quasar_API35.avd"
+
+&amp; "$env:ANDROID_HOME\emulator\emulator.exe" `
+    -avd "Quasar_API35" -gpu auto -memory 2048 -no-snapshot</code></pre><p>Answer “no” if asked to create a custom hardware profile. Do not use overwrite options against an existing virtual device.</p>
+      <h2>5. Install the APK from a verified ZIP</h2><p>First verify the downloaded ZIP against its Sigstore bundle and extract it on D:. Then target the emulator explicitly:</p><pre><code>$adb = "D:\Tools\android-sdk\platform-tools\adb.exe"
+&amp; $adb devices -l
+&amp; $adb -s emulator-5554 shell getprop ro.product.cpu.abilist
+&amp; $adb -s emulator-5554 shell getconf PAGE_SIZE
+&amp; $adb -s emulator-5554 install -r "D:\Quasar-Test\Quasar-Android-Free-0.4.0.apk"</code></pre><p>Replace the serial and path with your actual values. Android requires the same package ID and APK signing certificate for an in-place update; a debug-signed build cannot update a release-signed install.</p>
+      <h2>6. Run meaningful checks</h2><ol><li>Open every screen at normal and large text sizes; inspect contrast, clipping, scrolling, and background texture.</li><li>Use throwaway files only. Back up and restore each advertised format, then compare restored file hashes.</li><li>Exercise wrong passwords, truncated archive copies, cancellation, insufficient space, denied access, offline mode, and update failure. Errors should be explicit, never success-shaped.</li><li>Confirm each edition’s monthly limits, that paid activation removes ads, and that an affiliate request occurs only after an intentional click.</li><li>Test a same-key upgrade without uninstalling and confirm settings, usage, and license state remain.</li></ol>
+      <h2>Limits of the result</h2><ul><li>An x86_64 emulator does not prove ARM64 native-library compatibility or behavior on manufacturer-modified Android builds.</li><li>Do not use a successful 4 KB API 35 emulator run to infer 16 KB support. Inspection found that a packaged native dependency does not meet current Android 16 KB guidance, so 16 KB-page configurations are unsupported for v0.4.0.</li><li>USB workflows, recovery mode, rooted-device behavior, OEM restrictions, and real hardware backup/restore still require appropriate physical devices.</li><li>The guest can use the network and reach some host services. It is not an isolated malware-analysis environment.</li></ul>
+      <p><a href="/quasar/">← Return to Quasar downloads and release details</a></p>
+    </div></section>
+  </main>
+  <footer class="site-footer"><div class="shell footer-grid"><div><a class="brand" href="/"><img src="/assets/mark.svg?v=20261024-5" alt="" width="30" height="30"><span>Quasar Labs</span></a><p>Beta release · Thoughtful tools, built to last.</p></div><div><h2>Quasar</h2><a href="/quasar/">Product page</a><a href="/quasar/#downloads">Downloads</a><a href="/quasar/#integrity">Release integrity</a></div><div><h2>Explore</h2><a href="/projects/">Projects</a><a href="/links/">Official links</a><a href="/support/">Support</a></div><div><h2>Company</h2><a href="https://github.com/QuasarLI">GitHub organization ↗</a><a href="/privacy/">Privacy</a></div></div><div class="shell footer-bottom"><span>© <span data-year>2026</span> Quasar Labs</span><span>No emulator was started for this guide.</span></div></footer>
+</body>
+</html>
