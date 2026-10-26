@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PixelBridge v1.2.0 - cloud gaming, HDMI and local play - Quasar Labs</title>
+  <meta name="description" content="PixelBridge v1.2.0: native Windows 11 x64 cloud gaming, guided HDMI and LAN streaming, with free standard controller profiles in every edition and verifiable production downloads.">
+  <link rel="canonical" href="https://quasarli.github.io/pixelbridge/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Quasar Labs">
+  <meta property="og:title" content="PixelBridge v1.2.0 - One bridge. More ways to play.">
+  <meta property="og:description" content="Your services, your local library, your screen. Native Windows launcher with standard controller profiles and guided HDMI in every edition.">
+  <meta property="og:url" content="https://quasarli.github.io/pixelbridge/">
+  <meta property="og:image" content="https://quasarli.github.io/assets/banner-pixelbridge.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#07110c">
+  <link rel="icon" href="/assets/favicon.svg?v=20261024-5" type="image/svg+xml">
+  <script src="/assets/theme-init.js"></script>
+  <link rel="stylesheet" href="/assets/styles.css?v=20261024-6">
+  <link rel="stylesheet" href="/assets/pixelbridge.css?v=20261026-1">
+  <script src="/assets/site.js?v=20261024-3" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav shell" aria-label="Primary navigation">
+      <a class="brand" href="/" aria-label="Quasar Labs home"><img src="/assets/mark.svg?v=20261024-5" alt="" width="34" height="34"><span class="brand-name">Quasar Labs</span><span class="beta-tag">Beta</span></a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="nav-links"><span class="sr-only">Toggle navigation</span><span aria-hidden="true">Menu</span></button>
+      <div class="nav-links" id="nav-links"><a href="/projects/">Projects</a><a href="/about/">About</a><a href="/links/">Links</a><a href="/support/">Support</a><a class="nav-cta" href="https://github.com/QuasarLI">GitHub</a></div>
+      <label class="theme-picker"><span>Theme</span><select id="theme-select" aria-label="Site theme"><option value="obsidian">Obsidian</option><option value="deep-space">Deep Space</option><option value="graphite">Graphite</option><option value="aurora">Aurora</option><option value="nebula">Nebula</option><option value="solar-flare">Solar Flare</option></select></label>
+    </nav>
+  </header>
+  <main id="main">
+    <header class="pixelbridge-hero">
+      <div class="shell pixelbridge-hero-grid">
+        <div>
+          <div class="pixelbridge-brandline"><img src="/assets/icon-pixelbridge.png" alt="" width="64" height="64"><p class="kicker">PixelBridge 1.2.0 / Windows 11 x64</p></div>
+          <h1>Your games.<br>Your screen.<br><span class="pixelbridge-accent">One launchpad.</span></h1>
+          <p class="hero-copy">Bring Xbox Cloud Gaming, NVIDIA GeForce NOW, and your own legally sourced local games and media into a focused launchpad. PixelBridge is a native Windows WinForms app designed to stay lightweight, with a dark mint-and-cyan interface, controller-friendly navigation, and direct-HDMI TV setup in every tier.</p>
+          <div class="actions"><a class="button primary" href="#downloads">Download v1.2.0</a><a class="button secondary" href="#editions">Compare editions</a></div>
+        </div>
+        <div class="pixelbridge-route" aria-label="What runs where">
+          <p class="kicker">A launcher, not a cloud provider</p>
+          <div><span>Cloud services</span><strong>Xbox Cloud Gaming / GeForce NOW</strong><p>Launch the provider's service. Its account, subscription, availability, and terms still apply.</p></div>
+          <div><span>Your Windows PC</span><strong>Local games and media</strong><p>Your PC runs the emulator or media app. You supply the software and content you have the right to use.</p></div>
+          <div><span>Your other screen</span><strong>Direct HDMI or Sunshine to Moonlight</strong><p>Connect your Windows PC directly to a TV, or configure a Sunshine host and Moonlight client for local-network streaming.</p></div>
+        </div>
+      </div>
+    </header>
+    <nav class="section-index shell" aria-label="On this page"><span>PixelBridge v1.2.0</span><a href="#features">Overview</a><a href="#streaming">Streaming</a><a href="#controllers">Controllers</a><a href="#editions">Editions</a><a href="#downloads">Downloads</a><a href="#integrity">Verification</a></nav>
+
+    <section class="section shell" id="features" aria-labelledby="features-title">
+      <div class="section-heading"><div><p class="kicker">Choose the destination</p><h2 id="features-title">One place to start. Your services stay yours.</h2></div></div>
+      <div class="capability-grid">
+        <article><span>Cloud</span><h3>Launch existing services</h3><p>Xbox Cloud Gaming opens in a fresh, dedicated Microsoft Edge profile. GeForce NOW supports its official web player or your selected official native app. Provider accounts, memberships, regions, and game-ownership rules still apply.</p></article>
+        <article><span>Local</span><h3>Bring your own library</h3><p>Start local emulation or media tools with content you may legally use. No games, ROMs, BIOS files, or keys are bundled.</p></article>
+        <article><span>Catalog</span><h3>Official emulator routes</h3><p>NES, SNES, Sega Genesis / Mega Drive, Dreamcast, and N64 have documented native profile targets. Manual executable/media launching and official project links are free; curated descriptions and saved shortcuts start with Free with Ads.</p></article>
+        <article><span>Control</span><h3>Mappings in every edition</h3><p>All usable Xbox controller mappings and standard importable profiles, including native import/export, are included in every edition. Basic controller input is never a paid unlock. <a href="#controllers">Read the format and testing limits</a>.</p></article>
+      </div>
+      <p class="notice"><strong>Requirements:</strong> Windows 11 x64 and .NET Framework 4.8. Extract the entire ZIP to a local folder you control and run <code>PixelBridge.exe</code>; keep the runtime scripts, Profiles, Assets, and text guides together. No Electron runtime, background service, game installer, or bundled Sunshine is included. You install and configure external services and emulators separately.</p>
+    </section>
+
+    <section class="pixelbridge-band" id="streaming" aria-labelledby="streaming-title">
+      <div class="shell">
+        <div class="section-heading"><div><p class="kicker">Choose the connection</p><h2 id="streaming-title">Go direct by HDMI. Or stream over your LAN.</h2></div></div>
+        <div class="download-grid">
+          <article class="download-card"><span class="edition-label">Direct HDMI / every tier</span><h3>Your PC, connected to your TV</h3><p>Connect the Windows PC's supported HDMI output to your TV. PixelBridge lists active displays and opens native Windows projection, display, supported resolution/refresh, and sound-output controls. These are guided settings, not automatic output or TV firmware control. Keep a keyboard available; <kbd>Win+P</kbd> then PC screen only is the recovery route.</p><p>HDMI removes the local Sunshine encode/decode path. Xbox Cloud Gaming and GeForce NOW still have their provider and internet latency. The controller stays paired directly to the PC; HDMI-CEC, HDR, and particular display modes are not guaranteed.</p></article>
+          <article class="download-card"><span class="edition-label">Local-network streaming / every tier</span><h3>Sunshine host, Moonlight client</h3><p>Install and configure Sunshine and Moonlight separately. Guided LAN onboarding helps you choose a private home-network address and check the local host response. That response is not proof of receiver pairing, encoding, game compatibility, or TV audio. PixelBridge does not read Sunshine's host configuration, credentials, certificates, or pairing state.</p><p>No router WAN port forwarding or UPnP is required for this LAN setup. Optional firewall guidance previews the executable, address, subnet, ports, and Private profile before consent and Windows elevation; it does not open the host administration port or configure your router. PixelBridge does not automatically change VPN settings or disable security tools.</p></article>
+        </div>
+        <p class="notice"><strong>Acceptance testing is still incomplete:</strong> actual new emulator/controller gameplay, HDMI display/audio, and clean-PC Sunshine/Moonlight pairing have not been verified. Earlier Xbox streaming success with the predecessor app does not establish those results. PixelBridge does not promise zero lag, lower cloud latency, higher FPS, or support for every TV, streaming stick, controller, HDMI mode, or game.</p>
+      </div>
+    </section>
+
+    <section class="section shell" id="controllers" aria-labelledby="controllers-title">
+      <div class="section-heading"><div><p class="kicker">Native profiles / every tier</p><h2 id="controllers-title">Standard profiles and import/export stay free.</h2></div></div>
+      <p class="section-intro">The five standard <code>.rmp</code> remaps and common XInput <code>.cfg</code> bindings target RetroArch 1.21.0 with its Windows XInput joypad driver. Pair your controller directly to the PC. Import or export these standard native files in any edition without paid activation.</p>
+      <div class="pixelbridge-profile-grid">
+        <article><span class="edition-label">NES</span><h3>Nestopia</h3><p><code>NES.rmp</code></p><a href="https://docs.libretro.com/library/nestopia/">Official core documentation</a></article>
+        <article><span class="edition-label">SNES</span><h3>Snes9x</h3><p><code>SNES.rmp</code></p><a href="https://docs.libretro.com/library/snes9x/">Official core documentation</a></article>
+        <article><span class="edition-label">Genesis / Mega Drive</span><h3>Genesis Plus GX</h3><p><code>Genesis.rmp</code></p><a href="https://docs.libretro.com/library/genesis_plus_gx/">Official core documentation</a></article>
+        <article><span class="edition-label">Dreamcast</span><h3>Flycast</h3><p><code>Dreamcast.rmp</code></p><a href="https://docs.libretro.com/library/flycast/">Official core documentation</a></article>
+        <article><span class="edition-label">N64</span><h3>Mupen64Plus-Next</h3><p><code>N64.rmp</code></p><a href="https://docs.libretro.com/library/mupen64plus/">Official core documentation</a></article>
+      </div>
+      <p class="notice"><strong>Reference profiles, not gameplay certification:</strong> native formats have source/schema and round-trip checks, but actual gameplay/controller feel has not been tested with your controller, core, or legally obtained media. Check the emulator's Controls screen. These RetroArch files are not claimed as native imports for standalone alternatives, which use their own input menus.</p>
+      <p class="section-intro pixelbridge-edition-intro">Standard imports remain user-directed: the optional <code>.cfg</code> is appended for a launch without replacing <code>retroarch.cfg</code>, and you load the chosen <code>.rmp</code> in RetroArch. Pro edits port-1 digital remap destinations and saves custom per-system variants; analog axes remain unchanged. Pro's custom native subset import/export is separate from the free standard files. Existing configuration is not overwritten without preview, explicit consent, and a timestamped backup.</p>
+    </section>
+
+    <section class="section shell" id="editions" aria-labelledby="editions-title">
+      <div class="section-heading"><div><p class="kicker">Same input access. Different conveniences.</p><h2 id="editions-title">Controller support is not the upgrade.</h2></div></div>
+      <p class="notice"><strong>Included in every tier:</strong> cloud/LAN/manual play, all usable Xbox controller mappings, standard native profiles and import/export, and direct-HDMI TV output/setup through supported Windows settings. Essential input, streaming quality, privacy/security, and HDMI do not differ by edition. Pro is not required for standard controller configuration or basic HDMI setup.</p>
+      <p class="section-intro pixelbridge-edition-intro">Both paid editions are one-time purchases. See current price on Gumroad; no fixed price, subscription, renewal, or seat limit is asserted here. All four production ZIPs are on the public GitHub release; Supporter and Pro extras still require a matching customer license.</p>
+      <div class="pixelbridge-editions">
+        <article data-edition="free"><span class="edition-label">Free / no ads</span><h3>Free</h3><p>Essential Xbox Cloud Gaming, GeForce NOW, LAN, HDMI, and manual emulator/media launching, plus official project links and every standard controller profile with native import/export.</p></article>
+        <article data-edition="free-with-ads"><span class="edition-label">Free / affiliate-supported</span><h3>Free with Ads</h3><p>Adds curated descriptions and saved launcher shortcuts. Static disclosed AdGuard affiliate banners appear only on Emulators and Network. No gameplay overlay, view counter, click gate, or automatic banner network request.</p></article>
+        <article data-edition="supporter"><span class="edition-label">One-time purchase / ad-free</span><h3>Supporter</h3><p>The curated catalog and saved launcher shortcuts without affiliate banners. Essential play, HDMI, and standard controller profiles/import/export remain the same as Free.</p><a href="https://quasarlabs3.gumroad.com/l/kdxoac">Supporter: see current price on Gumroad</a></article>
+        <article data-edition="pro"><span class="edition-label">One-time purchase / advanced profiles</span><h3>Pro</h3><p>Supporter's ad-free conveniences plus advanced digital remap editing, saved per-system variants, and custom native subset import/export. Standard profiles and their native import/export remain free in all tiers.</p><a href="https://quasarlabs3.gumroad.com/l/mqkmz">Pro: see current price on Gumroad</a></article>
+      </div>
+      <p class="notice"><strong>Affiliate disclosure:</strong> the Free with Ads app edition may show relevant AdGuard affiliate recommendations. Quasar Labs may receive compensation after a purchase through those links. Clicking is optional, and these app-only placements do not add advertising to the Quasar Labs website.</p>
+      <div class="integrity-panel"><p class="kicker">Paid extras / not a play license</p><p>Activate with your customer key from the Gumroad receipt, not a product ID. Weekly online status checks happen only while the app is open or on a later launch. A previously verified one-time purchase remains usable indefinitely offline; temporary network errors retain those extras with stale/offline status. An unsuccessful first activation never grants a license.</p><p>Confirmed refund, dispute, disabled license, or other invalidation disables paid extras only: never game/media launching, standard mappings, or your retained library and variant files. Live customer-key activation is an untested acceptance gap; documented license handling and isolated checks are not proof of a completed real purchase/activation.</p></div>
+    </section>
+
+    <section class="pixelbridge-band" id="downloads" aria-labelledby="downloads-title">
+      <div class="shell">
+        <div class="section-heading"><div><p class="kicker">Official GitHub release / stable channel</p><h2 id="downloads-title">PixelBridge v1.2.0 for Windows 11 x64.</h2></div><a class="text-link" href="https://github.com/QuasarLI/PixelBridge-Distribution/releases/tag/v1.2.0">Release notes and all 18 assets</a></div>
+        <p class="section-intro">Choose one production ZIP for .NET Framework 4.8. Sizes and SHA-256 values below agree with the release API, release manifest, and SHA256SUMS. Verify the ZIP and its metadata before extraction or launch. Public access to a Supporter or Pro archive does not grant its paid extras; use your matching Gumroad receipt key. No automatic download is triggered.</p>
+        <p class="notice"><strong>Release integrity:</strong> independent post-publication checks verified all 18 final assets, all 11 Sigstore signatures, and the four contained production EXEs against the approved release. Each signing certificate binds the exact workflow identity, issuer, and workflow commit shown below. These checks do not establish the separate hardware, gameplay, or real-customer activation acceptance results described on this page.</p>
+        <div class="download-grid pixelbridge-downloads">
+          <article class="download-card" data-download-edition="free">
+            <span class="edition-label">Free / no ads</span><h3>Free</h3>
+            <p>Essential cloud/LAN/HDMI/manual play and every standard native controller profile with import/export.</p>
+            <span class="file-meta">Windows 11 x64 / ZIP / 155,006 bytes</span>
+            <dl class="pixelbridge-artifact"><dt>File</dt><dd><code>PixelBridge-v1.2.0-Free-win-x64.zip</code></dd><dt>SHA-256</dt><dd><code>8e9fcb082f0e386c8f6881be8b73c64fd90dd7e14b4fdc2b77a4c4e5c77cc5d6</code></dd></dl>
+            <a class="button primary" href="https://github.com/QuasarLI/PixelBridge-Distribution/releases/download/v1.2.0/PixelBridge-v1.2.0-Free-win-x64.zip">Download Free ZIP</a>
+            <div class="download-resources"><a href="https://github.com/QuasarLI/PixelBridge-Distribution/releases/download/v1.2.0/PixelBridge-v1.2.0-Free-win-x64.zip.sigstore.json">ZIP Sigstore bundle</a><a href="https://github.com/QuasarLI/PixelBridge-Distribution/releases/download/v1.2.0/PixelBridge-v1.2.0-Free-win-x64-PixelBridge.exe.sigstore.json">Contained EXE bundle</a></div>
+          </article>
+          <article class="download-card" data-download-edition="free-with-ads">
+            <span class="edition-label">Free / affiliate-supported</span><h3>Free with Ads</h3>
+            <p>Curated descriptions and saved launcher shortcuts, with disclosed banners on Emulators and Network only.</p>
+            <span class="file-meta">Windows 11 x64 / ZIP / 179,911 bytes</span>
+            <dl class="pixelbridge-artifact"><dt>File</dt><dd><code>PixelBridge-v1.2.0-FreewithAds-win-x64.zip</code></dd><dt>SHA-256</dt><dd><code>0da81bd7e06fcbffd627ccf20926564563d14c0a048e94e046f103836e9252e6</code></dd></dl>
+            <a class="button secondary" href="https://github.com/QuasarLI/PixelBridge-Distribution/releases/download/v1.2.0/PixelBridge-v1.2.0-FreewithAds-win-x64.zip">Download Free with Ads ZIP</a>
+            <div class="download-resources"><a href="https://github.com/QuasarLI/PixelBridge-Distribution/releases/download/v1.2.0/PixelBridge-v1.2.0-FreewithAds-win-x64.zip.sigstore.json">ZIP Sigstore bundle</a><a href="https://github.com/QuasarLI/PixelBridge-Distribution/releases/download/v1.2.0/PixelBridge-v1.2.0-FreewithAds-win-x64-PixelBridge.exe.sigstore.json">Contained EXE bundle</a></div>
+          </article>
+          <article class="download-card" data-download-edition="supporter">
+            <span class="edition-label">Paid extras / license required</span><h3>Supporter</h3>
+            <p>Ad-free curated catalog and saved launcher shortcuts. A matching Supporter customer key enables paid extras.</p>
+            <span class="file-meta">Windows 11 x64 / ZIP / 155,006 bytes</span>
+            <dl class="pixelbridge-artifact"><dt>File</dt><dd><code>PixelBridge-v1.2.0-Supporter-win-x64.zip</code></dd><dt>SHA-256</dt><dd><code>0fd01960f7fcedc58859c87fadc1d02e58378f224e76d56721e7b015762525ea</code></dd></dl>
+            <a class="button secondary" href="https://github.com/QuasarLI/PixelBridge-Distribution/releases/download/v1.2.0/PixelBridge-v1.2.0-Supporter-win-x64.zip">Download Supporter ZIP</a>
+            <div class="download-resources"><a href="https://github.com/QuasarLI/PixelBridge-Distribution/releases/download/v1.2.0/PixelBridge-v1.2.0-Supporter-win-x64.zip.sigstore.json">ZIP Sigstore bundle</a><a href="https://github.com/QuasarLI/PixelBridge-Distribution/releases/download/v1.2.0/PixelBridge-v1.2.0-Supporter-win-x64-PixelBridge.exe.sigstore.json">Contained EXE bundle</a></div>
+          </article>
+          <article class="download-card" data-download-edition="pro">
+            <span class="edition-label">Paid extras / license required</span><h3>Pro</h3>
+            <p>Ad-free library conveniences and advanced digital profile variants. A matching Pro customer key enables paid extras.</p>
+            <span class="file-meta">Windows 11 x64 / ZIP / 155,005 bytes</span>
+            <dl class="pixelbridge-artifact"><dt>File</dt><dd><code>PixelBridge-v1.2.0-Pro-win-x64.zip</code></dd><dt>SHA-256</dt><dd><code>0b103dd3fd6daa149a95c8d3d6a862b84b4e3f72467d32c8fd3f290b9bf02f54</code></dd></dl>
+            <a class="button secondary" href="https://github.com/QuasarLI/PixelBridge-Distribution/releases/download/v1.2.0/PixelBridge-v1.2.0-Pro-win-x64.zip">Download Pro ZIP</a>
+            <div class="download-resources"><a href="https://github.com/QuasarLI/PixelBridge-Distribution/releases/download/v1.2.0/PixelBridge-v1.2.0-Pro-win-x64.zip.sigstore.json">ZIP Sigstore bundle</a><a href="https://github.com/QuasarLI/PixelBridge-Distribution/releases/download/v1.2.0/PixelBridge-v1.2.0-Pro-win-x64-PixelBridge.exe.sigstore.json">Contained EXE bundle</a></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section shell prose" aria-labelledby="data-title">
+      <h2 id="data-title">Local settings. Explicit connections.</h2>
+      <p>Settings, saved shortcuts, and the priority undo ledger stay under <code>%LOCALAPPDATA%\PixelBridge</code>. Minimal paid-key/status data is DPAPI-encrypted for your Windows user; full purchase responses, customer keys, and personal purchase details are not logged. Never share license data or your Xbox browser profile.</p>
+      <p>The customer docs specify no analytics, startup task, tray daemon, or automatic banner network request. Explicit provider/download clicks, local health checks, and consented activation/weekly license refresh use their respective endpoints. Closing the menu stops its own polling, not Sunshine, your browser, or a game. For purchase help, use the help route on your Gumroad receipt; general studio support is on the <a href="/support/">Quasar Labs support page</a>.</p>
+    </section>
+
+    <section class="section shell" id="integrity" aria-labelledby="integrity-title">
+      <div class="section-heading"><div><p class="kicker">Verification without overclaiming</p><h2 id="integrity-title">Provenance is not Windows reputation.</h2></div></div>
+      <div class="integrity-explainer">
+        <article><span>01 / Published release signing</span><h3>GitHub OIDC and Sigstore</h3><p>The production release has 11 independently verified GitHub OIDC-backed Sigstore bundles: four ZIPs, their four contained EXEs, and the checksum manifest, release manifest, and provenance. All four ZIPs and the manifest match the approved customer originals byte for byte.</p></article>
+        <article><span>02 / Exact bytes and identity</span><h3>Verify the named release</h3><p>Use the exact expected protected-main workflow identity and issuer below, not an identity accepted merely because it appears in a download. Verify signatures and transparency-log material, then match size/hash and signed provenance before running anything.</p></article>
+        <article><span>03 / Different trust systems</span><h3>No Authenticode claim</h3><p>ZIP and contained-EXE blob signatures are not Windows Authenticode signatures. Windows may still show Unknown Publisher or SmartScreen warnings. Do not disable security protections. Sigstore does not guarantee safety, licensing, compatibility, or freedom from bugs.</p></article>
+      </div>
+      <div class="download-resources">
+        <a href="https://github.com/QuasarLI/PixelBridge-Distribution/releases/download/v1.2.0/SHA256SUMS">SHA256SUMS</a><a href="https://github.com/QuasarLI/PixelBridge-Distribution/releases/download/v1.2.0/SHA256SUMS.sigstore.json">Checksum bundle</a>
+        <a href="https://github.com/QuasarLI/PixelBridge-Distribution/releases/download/v1.2.0/release-manifest.json">Release manifest</a><a href="https://github.com/QuasarLI/PixelBridge-Distribution/releases/download/v1.2.0/release-manifest.json.sigstore.json">Manifest bundle</a>
+        <a href="https://github.com/QuasarLI/PixelBridge-Distribution/releases/download/v1.2.0/provenance.json">Provenance</a><a href="https://github.com/QuasarLI/PixelBridge-Distribution/releases/download/v1.2.0/provenance.json.sigstore.json">Provenance bundle</a>
+      </div>
+      <details class="verify-details pixelbridge-verification">
+        <summary>Exact signing identity and release provenance</summary>
+        <dl class="pixelbridge-artifact">
+          <dt>Certificate identity</dt><dd><code>https://github.com/QuasarLI/PixelBridge-Distribution/.github/workflows/release.yml@refs/heads/main</code></dd>
+          <dt>OIDC issuer</dt><dd><code>https://token.actions.githubusercontent.com</code></dd>
+          <dt>Distribution workflow commit</dt><dd><code>54450c3fcec56423c0521c9506d312fad8fbbfca</code></dd>
+          <dt>Declared private-source commit</dt><dd><code>6322a75cb58544401b8ae6a864ddf98cd558c45a</code></dd>
+          <dt>Release manifest SHA-256</dt><dd><code>7d480908eafca07ae04fa5ec6e802923200f1253884307ec28e21a086507c424</code></dd>
+        </dl>
+        <p>The private-source commit is a publisher declaration, not a publicly reproducible build attestation. Check these values and the run against the signed provenance and official release notes.</p>
+        <div class="download-resources"><a href="https://github.com/QuasarLI/PixelBridge-Distribution/actions/runs/40334369634/attempts/1">Successful signing run</a><a href="https://github.com/QuasarLI/PixelBridge-Distribution/blob/54450c3fcec56423c0521c9506d312fad8fbbfca/.github/workflows/release.yml">Exact signing workflow</a></div>
+      </details>
+      <details class="verify-details guide-prose pixelbridge-verification">
+        <summary>Verify a Free ZIP on Windows before launch</summary>
+        <p>Install trusted <strong>cosign v3</strong> using <a href="https://docs.sigstore.dev/cosign/system_config/installation/">official Sigstore guidance</a>. Download the selected ZIP, its ZIP and EXE bundles, and all three metadata files with their bundles from the release links above into one folder. Do not trust a cosign binary just because it sits beside an app download. Run PowerShell in that folder and stop on any failure.</p>
+        <pre><code>$ErrorActionPreference = 'Stop'
+$identity = 'https://github.com/QuasarLI/PixelBridge-Distribution/.github/workflows/release.yml@refs/heads/main'
+$issuer = 'https://token.actions.githubusercontent.com'
+$zip = 'PixelBridge-v1.2.0-Free-win-x64.zip'
+foreach ($name in @($zip, 'release-manifest.json', 'provenance.json', 'SHA256SUMS')) {
+    cosign verify-blob --bundle "$name.sigstore.json" --certificate-identity $identity --certificate-oidc-issuer $issuer $name
+    if ($LASTEXITCODE -ne 0) { throw "Signature verification failed: $name" }
+}
+$manifest = Get-Content -LiteralPath '.\release-manifest.json' -Raw | ConvertFrom-Json
+if ($manifest.product -cne 'PixelBridge' -or $manifest.version -cne '1.2.0') {
+    throw 'Unexpected product/version'
+}
+$entry = @($manifest.artifacts | Where-Object { $_.file -ceq $zip })
+if ($entry.Count -ne 1) { throw 'Missing or duplicate ZIP in manifest' }
+$file = Get-Item -LiteralPath $zip
+$hash = (Get-FileHash -LiteralPath $zip -Algorithm SHA256).Hash.ToLowerInvariant()
+if ($hash -cne $entry[0].sha256 -or $file.Length -ne $entry[0].size_bytes) {
+    throw 'ZIP bytes do not match signed manifest'
+}
+if (@(Get-Content -LiteralPath '.\SHA256SUMS' | Where-Object { $_ -ceq "$hash  $zip" }).Count -ne 1) {
+    throw 'ZIP checksum does not match signed SHA256SUMS'
+}</code></pre>
+        <p>Check the signed provenance's version, manifest hash, source and distribution commits, and workflow run against the exact release facts above. Then extract the verified archive into a <strong>new empty directory</strong> and verify its contained EXE before launch:</p>
+        <pre><code>Expand-Archive -LiteralPath $zip -DestinationPath '.\verified-Free'
+$exeBundle = 'PixelBridge-v1.2.0-Free-win-x64-PixelBridge.exe.sigstore.json'
+cosign verify-blob --bundle $exeBundle --certificate-identity $identity --certificate-oidc-issuer $issuer '.\verified-Free\PixelBridge.exe'
+if ($LASTEXITCODE -ne 0) { throw 'EXE signature verification failed' }</code></pre>
+        <p>For another edition, use its exact ZIP name, its matching ZIP/EXE bundles, and a separate new extraction directory. Never skip signature, identity, issuer, or transparency-log verification. Do not repack a ZIP: that changes its signed bytes. <a href="https://github.com/QuasarLI/PixelBridge-Distribution/blob/4c2937b867a1f6b5fbf04d2875e51d1b44f3ad6e/docs/VERIFYING.md">Full verification guidance</a>.</p>
+      </details>
+    </section>
+
+    <section class="content-section shell prose" aria-labelledby="boundaries-title">
+      <h2 id="boundaries-title">Independent software. Clear boundaries.</h2>
+      <p>PixelBridge is a Quasar Labs app, not a licensed, endorsed, or affiliated Nintendo, Sega, Xbox, or NVIDIA product. Service names and trademarks belong to their respective owners. You supply your own accounts, subscriptions, software, and legally sourced content, subject to the relevant terms and local law.</p>
+      <p>No games, ROMs, BIOS files, or keys are bundled. The public distribution repository is for release delivery, not public app source.</p>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="shell footer-grid">
+      <div><a class="brand" href="/"><img src="/assets/mark.svg?v=20261024-5" alt="" width="30" height="30"><span>Quasar Labs</span></a><p>PixelBridge / One bridge. More ways to play.</p></div>
+      <div><h2>Explore</h2><a href="/projects/">Projects</a><a href="/about/">About</a><a href="/links/">Official links</a><a href="/support/">Support</a></div>
+      <div><h2>PixelBridge</h2><a href="#editions">Editions</a><a href="#downloads">Downloads</a><a href="#integrity">Release verification</a></div>
+      <div><h2>Company</h2><a href="https://github.com/QuasarLI">GitHub organization</a><a href="/privacy/">Privacy</a></div>
+    </div>
+    <div class="shell footer-bottom"><span>&copy; <span data-year>2026</span> Quasar Labs</span><span>Six themes. Zero trackers.</span></div>
+  </footer>
+</body>
+</html>
