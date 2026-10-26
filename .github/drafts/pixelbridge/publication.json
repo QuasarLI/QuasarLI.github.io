@@ -1,0 +1,127 @@
+{
+  "product": "PixelBridge",
+  "state": "draft",
+  "publicationAuthorized": false,
+  "intendedRoute": "/pixelbridge/",
+  "previewRoute": "/.github/drafts/pixelbridge/",
+  "publicDistributionRepository": "https://github.com/QuasarLI/PixelBridge-Distribution",
+  "sourceVisibility": "private",
+  "confirmedReleasePlan": {
+    "version": "1.2.0",
+    "platform": "Windows x64",
+    "expectedArtifactNames": [
+      "PixelBridge-v1.2.0-Free-win-x64.zip",
+      "PixelBridge-v1.2.0-FreewithAds-win-x64.zip",
+      "PixelBridge-v1.2.0-Supporter-win-x64.zip",
+      "PixelBridge-v1.2.0-Pro-win-x64.zip"
+    ],
+    "note": "Finalized naming contract, not evidence that these archives exist, are public, or have been verified."
+  },
+  "hostingBoundary": {
+    "draftDirectory": ".github/drafts/pixelbridge",
+    "excludedBy": "actions/upload-pages-artifact@v3 excludes .github from the Pages artifact",
+    "robotsIsAccessControl": false,
+    "publicPagesUnchanged": true,
+    "note": "This repository is public. Draft exclusion prevents site publication, not access to committed draft source. Store no credentials, customer data, license keys, or private app source here."
+  },
+  "releaseFacts": {
+    "version": null,
+    "channel": null,
+    "tag": null,
+    "releaseUrl": null,
+    "releaseNotesUrl": null,
+    "supportedWindowsVersions": null,
+    "architectures": null,
+    "runtimeAndInstallPrerequisites": null,
+    "productionCompatibilityEvidence": null,
+    "finalFeatureMatrix": null,
+    "finalOfficialEmulatorCatalog": null,
+    "approvedBrandingAsset": null,
+    "checksumManifestUrl": null,
+    "checksumManifestBundleUrl": null,
+    "sigstoreOidcIssuer": null,
+    "sigstoreCertificateIdentity": null,
+    "signingWorkflowUrl": null,
+    "verificationInstructions": null,
+    "artifactVerificationEvidence": null,
+    "productionBuildExcludesTestUnlocks": null,
+    "privacyAndSupportFacts": null,
+    "editions": [
+      {
+        "id": "free",
+        "displayName": "Free",
+        "availability": null,
+        "artifactName": null,
+        "artifactUrl": null,
+        "sizeBytes": null,
+        "sha256": null,
+        "sigstoreBundleUrl": null
+      },
+      {
+        "id": "free-with-ads",
+        "displayName": "Free with Ads",
+        "availability": null,
+        "artifactName": null,
+        "artifactUrl": null,
+        "sizeBytes": null,
+        "sha256": null,
+        "sigstoreBundleUrl": null
+      },
+      {
+        "id": "supporter",
+        "displayName": "Supporter",
+        "availability": null,
+        "artifactName": null,
+        "artifactUrl": null,
+        "sizeBytes": null,
+        "sha256": null,
+        "sigstoreBundleUrl": null,
+        "deliveryMethod": null,
+        "licenseRequirements": null,
+        "approvedCheckoutUrl": null,
+        "approvedPriceAndCurrency": null
+      },
+      {
+        "id": "pro",
+        "displayName": "Pro",
+        "availability": null,
+        "artifactName": null,
+        "artifactUrl": null,
+        "sizeBytes": null,
+        "sha256": null,
+        "sigstoreBundleUrl": null,
+        "deliveryMethod": null,
+        "licenseRequirements": null,
+        "approvedCheckoutUrl": null,
+        "approvedPriceAndCurrency": null
+      }
+    ]
+  },
+  "publicationRequirements": [
+    "Obtain the release session's production facts and verification evidence; a created repository or planned workflow is not a verified release.",
+    "Confirm exact public artifacts, channel, sizes, checksums, matching Sigstore bundles, issuer, certificate identity, and executable verification commands against the actual signed release.",
+    "Confirm the final app feature matrix. Every usable Xbox mapping, standard importable profile, and direct-HDMI TV output/setup must be included in every tier. Advanced profile variants are distinct from standard configuration.",
+    "Confirm direct-HDMI setup uses supported native Windows display/audio settings and guidance, with no Sunshine encode/decode path. Cloud services still have latency; do not promise TV firmware control or unsupported display capabilities.",
+    "Confirm customer-friendly Sunshine LAN onboarding and diagnostics without required router WAN port forwarding or UPnP. Do not infer broader remote-access capabilities.",
+    "Confirm Windows requirements and describe only the tested production configurations; do not imply all Fire TV, TV, controller, or network setups are supported.",
+    "Confirm official emulator links, affiliate behavior, privacy and support facts, and any new branding asset. No local browser profile, Sunshine configuration, credentials, customer data, games, ROMs, BIOS files, or keys may be copied.",
+    "Confirm every public build is production-only. Never publish an unlocked Pro test build, license bypass, customer key, or private source link.",
+    "Obtain user-approved paid pricing, checkout URLs, license requirements, and delivery rules, or explicitly keep paid offers unavailable. Never derive checkout URLs from product IDs.",
+    "Obtain explicit final site-publication authorization after real signed release artifacts arrive."
+  ],
+  "publicationSteps": [
+    "Keep this draft under .github and off main-site routes until the requirements are met. No deploy, merge to main, or release publication is part of this preparation task.",
+    "In a separately authorized publication change, move index.html to pixelbridge/index.html and pixelbridge.css to assets/pixelbridge.css; replace the draft stylesheet URL.",
+    "Replace draft notices and unavailable states with evidence-backed release labels and exact production download/checksum/bundle links. Keep explicit unavailable states for any unapproved paid offers.",
+    "Remove draft-only preview links and robots directives from the published product page, and add its canonical and social metadata using the final /pixelbridge/ route.",
+    "Adapt placements.html components into index.html project grid and release desk, projects/index.html, links/index.html, and the Products footers. Include the relevant scoped PixelBridge stylesheet rules on pages using those components. Point product navigation to /pixelbridge/ and keep exact downloads on that page.",
+    "Update the home page product-status summary, product enumeration copy and metadata, relevant site descriptions, and sitemap.xml consistently. Do not change existing products' download or commerce sections.",
+    "Adjust only related grid styling if the fifth home status item needs it. Preserve all six themes, mobile layout, keyboard navigation, and reduced-motion behavior.",
+    "Retire the draft-only test and its Pages workflow step as part of that reviewed publication change, replacing them with checks for actual approved release facts.",
+    "Run python scripts/check_site.py and the relevant unittest suite, review desktop/mobile previews, and recheck final download and verification routes before the authorized deployment."
+  ],
+  "validationCommands": [
+    "python scripts/check_site.py",
+    "python -m unittest scripts.test_pixelbridge_draft"
+  ]
+}

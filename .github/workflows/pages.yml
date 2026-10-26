@@ -24,6 +24,8 @@ jobs:
           python-version: "3.x"
       - name: Check site markup and local links
         run: python scripts/check_site.py
+      - name: Keep PixelBridge draft unpublished
+        run: python -m unittest scripts.test_pixelbridge_draft
 
   deploy:
     environment:
