@@ -1,21 +1,33 @@
 {
   "product": "PixelBridge",
   "state": "draft",
-  "publicationAuthorized": false,
+  "publicationReady": false,
+  "userAuthorizedPublicationAfterSignedRelease": true,
+  "awaitingCoordinatorSignedReleaseHandoff": true,
   "intendedRoute": "/pixelbridge/",
   "previewRoute": "/.github/drafts/pixelbridge/",
   "publicDistributionRepository": "https://github.com/QuasarLI/PixelBridge-Distribution",
   "sourceVisibility": "private",
+  "documentaryBasis": {
+    "privateSourceCommit": "6322a75cb58544401b8ae6a864ddf98cd558c45a",
+    "files": ["docs/README.txt", "docs/CONTROLLERS.txt", "README.md"],
+    "note": "Product facts were read from these customer/source docs at the exact commit. No private app source or customer state is copied into the site."
+  },
+  "contentReview": {
+    "reportedBy": "Coordinator: app review and distribution independent actual-content review passed",
+    "releaseManifestSha256": "7d480908eafca07ae04fa5ec6e802923200f1253884307ec28e21a086507c424",
+    "scope": "Customer package content review, not a signature, public release, real customer-key activation, or hardware/gameplay acceptance result"
+  },
   "confirmedReleasePlan": {
     "version": "1.2.0",
-    "platform": "Windows x64",
+    "platform": "Windows 11 x64 / .NET Framework 4.8",
     "expectedArtifactNames": [
       "PixelBridge-v1.2.0-Free-win-x64.zip",
       "PixelBridge-v1.2.0-FreewithAds-win-x64.zip",
       "PixelBridge-v1.2.0-Supporter-win-x64.zip",
       "PixelBridge-v1.2.0-Pro-win-x64.zip"
     ],
-    "note": "Finalized naming contract, not evidence that these archives exist, are public, or have been verified."
+    "note": "Finalized customer archive naming contract. Content review has been reported separately; names do not establish a public signed release."
   },
   "hostingBoundary": {
     "draftDirectory": ".github/drafts/pixelbridge",
@@ -25,18 +37,56 @@
     "note": "This repository is public. Draft exclusion prevents site publication, not access to committed draft source. Store no credentials, customer data, license keys, or private app source here."
   },
   "releaseFacts": {
-    "version": null,
+    "version": "1.2.0",
     "channel": null,
     "tag": null,
     "releaseUrl": null,
     "releaseNotesUrl": null,
-    "supportedWindowsVersions": null,
-    "architectures": null,
-    "runtimeAndInstallPrerequisites": null,
-    "productionCompatibilityEvidence": null,
-    "finalFeatureMatrix": null,
-    "finalOfficialEmulatorCatalog": null,
-    "approvedBrandingAsset": null,
+    "supportedWindowsVersions": ["Windows 11"],
+    "architectures": ["x64"],
+    "runtimeAndInstallPrerequisites": {
+      "runtime": ".NET Framework 4.8",
+      "installation": "Extract the entire ZIP to a local folder you control; run PixelBridge.exe with runtime scripts, Profiles, Assets, and text guides kept together.",
+      "cloud": "Xbox Cloud uses a fresh dedicated Microsoft Edge profile. GeForce NOW supports its official web player or the user's selected official native app. Users provide accounts/subscriptions subject to provider requirements.",
+      "lan": "Sunshine and Moonlight are separately installed/configured projects; Sunshine is not bundled. LAN use requires no router WAN port forwarding or UPnP.",
+      "hdmi": "Supported PC HDMI output and TV input; guided native Windows display/audio settings, not automatic TV control. Controller stays paired directly to the PC.",
+      "notIncluded": ["Games", "ROMs", "BIOS files", "Encryption keys", "Firmware", "Customer accounts", "Sunshine", "Electron runtime", "Background service", "Game installer"]
+    },
+    "productionCompatibilityEvidence": {
+      "documentedChecks": "Isolated source/schema/round-trip checks for native profiles and isolated license/edition checks; coordinator-reported package-content reviews.",
+      "untestedAcceptanceGaps": [
+        "Real customer Gumroad key activation",
+        "Actual new emulator/controller gameplay",
+        "HDMI display and TV audio",
+        "Clean-PC Sunshine/Moonlight pairing"
+      ],
+      "priorXboxStreaming": "Success with the installed predecessor is not evidence of these new-feature acceptance results.",
+      "limits": "No zero-lag, FPS, cloud-latency reduction, universal hardware, HDMI-CEC, HDR, or display-mode guarantee."
+    },
+    "documentedFeatureMatrix": [
+      {"feature": "Xbox Cloud / GeForce NOW / LAN / guided direct HDMI", "editions": ["free", "free-with-ads", "supporter", "pro"]},
+      {"feature": "Manual executable/media launching and official project links", "editions": ["free", "free-with-ads", "supporter", "pro"]},
+      {"feature": "All five standard Xbox native .rmp remaps and common XInput .cfg bindings, with standard native import/export", "editions": ["free", "free-with-ads", "supporter", "pro"]},
+      {"feature": "Curated descriptions and saved launcher shortcuts", "editions": ["free-with-ads", "supporter", "pro"]},
+      {"feature": "Static disclosed AdGuard affiliate banners on Emulators and Network only; no automatic banner network request, overlay, counter, or click gate", "editions": ["free-with-ads"]},
+      {"feature": "Advanced port-1 digital remap editing, saved per-system variants, and custom native subset import/export; analog axes unchanged", "editions": ["pro"]}
+    ],
+    "documentedNativeProfileTargets": {
+      "frontend": "RetroArch 1.21.0 / Windows XInput joypad driver",
+      "standardBindings": "PixelBridge-XInput.cfg",
+      "profiles": [
+        {"system": "NES", "core": "Nestopia", "file": "NES.rmp", "documentationUrl": "https://docs.libretro.com/library/nestopia/"},
+        {"system": "SNES", "core": "Snes9x", "file": "SNES.rmp", "documentationUrl": "https://docs.libretro.com/library/snes9x/"},
+        {"system": "Sega Genesis / Mega Drive", "core": "Genesis Plus GX", "file": "Genesis.rmp", "documentationUrl": "https://docs.libretro.com/library/genesis_plus_gx/"},
+        {"system": "Dreamcast", "core": "Flycast", "file": "Dreamcast.rmp", "documentationUrl": "https://docs.libretro.com/library/flycast/"},
+        {"system": "N64", "core": "Mupen64Plus-Next", "file": "N64.rmp", "documentationUrl": "https://docs.libretro.com/library/mupen64plus/"}
+      ],
+      "limits": "Reference profiles, not actual gameplay/controller certification. Standard native imports/exports are free. Standalone alternatives use their own input menus; RetroArch files are not claimed as their native imports."
+    },
+    "approvedBrandingAssets": [
+      {"path": ".github/drafts/pixelbridge/icon-pixelbridge.png", "dimensions": [600, 600], "sizeBytes": 63474, "sha256": "a4b42c9fb06376d261f690afe5ff78decdae8a40fd49fd8bb00b3aeef102d162"},
+      {"path": ".github/drafts/pixelbridge/banner-pixelbridge.png", "dimensions": [1920, 1080], "sizeBytes": 624905, "sha256": "fecd35f52335b851eb82de3692010f907c31d12affe54c35d415f0bb944685eb"}
+    ],
     "checksumManifestUrl": null,
     "checksumManifestBundleUrl": null,
     "sigstoreOidcIssuer": null,
@@ -44,14 +94,34 @@
     "signingWorkflowUrl": null,
     "verificationInstructions": null,
     "artifactVerificationEvidence": null,
-    "productionBuildExcludesTestUnlocks": null,
-    "privacyAndSupportFacts": null,
+    "productionBuildExcludesTestUnlocks": {
+      "documentedBoundary": "Customer package export excludes the separately compiled Local Test Pro build, test executables, receipts, previews, private source, user state, and customer entitlements. No production runtime test key or unlock switch.",
+      "contentReviewManifestSha256": "7d480908eafca07ae04fa5ec6e802923200f1253884307ec28e21a086507c424",
+      "finalReleaseRecheckRequired": true
+    },
+    "privacyAndSupportFacts": {
+      "localData": "%LOCALAPPDATA%\\PixelBridge",
+      "licenseStorage": "Minimal key/status is DPAPI-encrypted for the current Windows user; no raw purchase response, full PII, or customer key logging.",
+      "network": "No analytics, startup task, tray daemon, or automatic banner network request. Explicit provider/download clicks, local health checks, and consented activation/weekly refresh contact their respective endpoints.",
+      "sunshineBoundary": "No reading of host configuration, apps list, credentials, certificates, or pairing state. A local host response does not prove pairing/encoding/audio/game compatibility.",
+      "networkChanges": "No required WAN forwarding/UPnP, automatic VPN changes, router configuration, or disabling of security tools. Optional Private-profile firewall action previews exact scope and asks consent/elevation; it does not open Sunshine administration.",
+      "closingApp": "Stops its own polling, not Sunshine, a browser, or a game.",
+      "support": "General studio support: /support/. Purchase help: route supplied by the customer's Gumroad receipt."
+    },
+    "paidLicensePolicy": {
+      "purchase": "One-time purchase for Supporter and Pro",
+      "activation": "Matching customer key from Gumroad receipt; fixed edition product ID and official HTTPS API, increment_uses_count=false. Failed first activation never grants access.",
+      "onlineRecheck": "Weekly while the app is open or on later launch",
+      "offline": "Previously verified one-time purchases remain usable indefinitely offline. Temporary network errors retain prior extras with stale/offline status.",
+      "confirmedInvalidation": "Removes paid extras only, never games, standard mappings, media, or retained library/variant files.",
+      "acceptanceGap": "No real customer-key/API activation acceptance test has been completed."
+    },
     "editions": [
       {
         "id": "free",
         "displayName": "Free",
         "availability": null,
-        "artifactName": null,
+        "artifactName": "PixelBridge-v1.2.0-Free-win-x64.zip",
         "artifactUrl": null,
         "sizeBytes": null,
         "sha256": null,
@@ -61,7 +131,7 @@
         "id": "free-with-ads",
         "displayName": "Free with Ads",
         "availability": null,
-        "artifactName": null,
+        "artifactName": "PixelBridge-v1.2.0-FreewithAds-win-x64.zip",
         "artifactUrl": null,
         "sizeBytes": null,
         "sha256": null,
@@ -71,48 +141,50 @@
         "id": "supporter",
         "displayName": "Supporter",
         "availability": null,
-        "artifactName": null,
+        "artifactName": "PixelBridge-v1.2.0-Supporter-win-x64.zip",
         "artifactUrl": null,
         "sizeBytes": null,
         "sha256": null,
         "sigstoreBundleUrl": null,
         "deliveryMethod": null,
-        "licenseRequirements": null,
-        "approvedCheckoutUrl": null,
-        "approvedPriceAndCurrency": null
+        "licenseRequirements": "Matching customer receipt key activates paid extras only; see paidLicensePolicy.",
+        "approvedCheckoutUrl": "https://quasarlabs3.gumroad.com/l/kdxoac",
+        "approvedPriceAndCurrency": null,
+        "priceDisplay": "See current price on Gumroad",
+        "oneTimePurchase": true
       },
       {
         "id": "pro",
         "displayName": "Pro",
         "availability": null,
-        "artifactName": null,
+        "artifactName": "PixelBridge-v1.2.0-Pro-win-x64.zip",
         "artifactUrl": null,
         "sizeBytes": null,
         "sha256": null,
         "sigstoreBundleUrl": null,
         "deliveryMethod": null,
-        "licenseRequirements": null,
-        "approvedCheckoutUrl": null,
-        "approvedPriceAndCurrency": null
+        "licenseRequirements": "Matching customer receipt key activates paid extras only; see paidLicensePolicy.",
+        "approvedCheckoutUrl": "https://quasarlabs3.gumroad.com/l/mqkmz",
+        "approvedPriceAndCurrency": null,
+        "priceDisplay": "See current price on Gumroad",
+        "oneTimePurchase": true
       }
     ]
   },
   "publicationRequirements": [
-    "Obtain the release session's production facts and verification evidence; a created repository or planned workflow is not a verified release.",
+    "Receive the coordinator's validated final signed-release handoff. The user has already authorized publication after real signed releases; no additional generic publication-approval question is needed.",
     "Confirm exact public artifacts, channel, sizes, checksums, matching Sigstore bundles, issuer, certificate identity, and executable verification commands against the actual signed release.",
-    "Confirm the final app feature matrix. Every usable Xbox mapping, standard importable profile, and direct-HDMI TV output/setup must be included in every tier. Advanced profile variants are distinct from standard configuration.",
-    "Confirm direct-HDMI setup uses supported native Windows display/audio settings and guidance, with no Sunshine encode/decode path. Cloud services still have latency; do not promise TV firmware control or unsupported display capabilities.",
-    "Confirm customer-friendly Sunshine LAN onboarding and diagnostics without required router WAN port forwarding or UPnP. Do not infer broader remote-access capabilities.",
-    "Confirm Windows requirements and describe only the tested production configurations; do not imply all Fire TV, TV, controller, or network setups are supported.",
-    "Confirm official emulator links, affiliate behavior, privacy and support facts, and any new branding asset. No local browser profile, Sunshine configuration, credentials, customer data, games, ROMs, BIOS files, or keys may be copied.",
+    "Carry forward the reviewed customer-doc facts: Windows 11 x64/.NET Framework 4.8; all-tier essential play, HDMI, every standard native mapping and import/export; Pro limited to advanced digital variants/custom native subset.",
+    "Preserve explicit untested acceptance gaps after release signing: real customer-key activation, new emulator/controller gameplay, HDMI/audio, and clean-PC Sunshine pairing. Do not substitute predecessor Xbox-streaming success for them.",
+    "Do not imply zero lag, measured latency/FPS gains, universal device support, automatic TV firmware control, or required WAN forwarding/UPnP.",
+    "Use only approved original branding and documented official project routes. No local browser profile, Sunshine configuration, credentials, customer data, games, ROMs, BIOS files, firmware, or keys may be copied.",
     "Confirm every public build is production-only. Never publish an unlocked Pro test build, license bypass, customer key, or private source link.",
-    "Obtain user-approved paid pricing, checkout URLs, license requirements, and delivery rules, or explicitly keep paid offers unavailable. Never derive checkout URLs from product IDs.",
-    "Obtain explicit final site-publication authorization after real signed release artifacts arrive."
+    "Use the approved Supporter/Pro URLs with one-time purchase and See current price on Gumroad wording. Do not hardcode a price or invent a subscription/seat limit. Confirm exact production package delivery in the signed-release handoff."
   ],
   "publicationSteps": [
     "Keep this draft under .github and off main-site routes until the requirements are met. No deploy, merge to main, or release publication is part of this preparation task.",
-    "In a separately authorized publication change, move index.html to pixelbridge/index.html and pixelbridge.css to assets/pixelbridge.css; replace the draft stylesheet URL.",
-    "Replace draft notices and unavailable states with evidence-backed release labels and exact production download/checksum/bundle links. Keep explicit unavailable states for any unapproved paid offers.",
+    "After the validated signed-release handoff satisfies the existing conditional authorization, move index.html to pixelbridge/index.html and pixelbridge.css to assets/pixelbridge.css. Move the two approved PNGs to assets/icon-pixelbridge.png and assets/banner-pixelbridge.png and update draft asset URLs.",
+    "Replace draft notices and unavailable states with evidence-backed release labels and exact production download/checksum/bundle links. Keep any still-unconfirmed production package delivery unavailable; preserve the approved checkout URLs without hardcoded prices.",
     "Remove draft-only preview links and robots directives from the published product page, and add its canonical and social metadata using the final /pixelbridge/ route.",
     "Adapt placements.html components into index.html project grid and release desk, projects/index.html, links/index.html, and the Products footers. Include the relevant scoped PixelBridge stylesheet rules on pages using those components. Point product navigation to /pixelbridge/ and keep exact downloads on that page.",
     "Update the home page product-status summary, product enumeration copy and metadata, relevant site descriptions, and sitemap.xml consistently. Do not change existing products' download or commerce sections.",

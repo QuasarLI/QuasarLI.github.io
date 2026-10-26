@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>PixelBridge - unpublished product draft - Quasar Labs</title>
-  <meta name="description" content="Unpublished PixelBridge product draft: a native Windows launcher for cloud gaming services and your own local games and media.">
+  <meta name="description" content="Unpublished PixelBridge 1.2.0 product draft: a native Windows 11 x64 launcher for cloud gaming, direct HDMI, LAN streaming, and your own local games and media.">
   <meta name="robots" content="noindex, nofollow">
   <link rel="icon" href="/assets/favicon.svg?v=20261024-5" type="image/svg+xml">
   <script src="/assets/theme-init.js"></script>
@@ -24,15 +24,15 @@
   </header>
   <main id="main">
     <aside class="notice shell pixelbridge-draft" aria-label="Publication status">
-      <strong>Unpublished draft - not a release announcement.</strong> Product details remain subject to the final app and production release. Downloads and checkout are intentionally unavailable. <a href="/.github/drafts/pixelbridge/placements.html">Review site listing previews</a>.
+      <strong>Unpublished draft - not a release announcement.</strong> Product facts reflect the reviewed v1.2.0 customer docs. Approved purchase routes are shown, but production downloads remain withheld pending the signed-release handoff. <a href="/.github/drafts/pixelbridge/placements.html">Review site listing previews</a>.
     </aside>
     <header class="pixelbridge-hero">
       <div class="shell pixelbridge-hero-grid">
         <div>
-          <p class="kicker">PixelBridge / Native Windows launcher</p>
+          <div class="pixelbridge-brandline"><img src="/.github/drafts/pixelbridge/icon-pixelbridge.png" alt="" width="64" height="64"><p class="kicker">PixelBridge 1.2.0 / Windows 11 x64</p></div>
           <h1>Your games.<br>Your screen.<br><span class="pixelbridge-accent">One launchpad.</span></h1>
           <p class="hero-copy">Bring Xbox Cloud Gaming, NVIDIA GeForce NOW, and your own legally sourced local games and media into a focused launchpad. PixelBridge is a native Windows WinForms app designed to stay lightweight, with a dark mint-and-cyan interface, controller-friendly navigation, and direct-HDMI TV setup in every tier.</p>
-          <div class="actions"><a class="button primary" href="#editions">Compare planned editions</a><a class="button secondary" href="#streaming">Understand the streaming setup</a></div>
+          <div class="actions"><a class="button primary" href="#editions">Compare editions</a><a class="button secondary" href="#streaming">Understand the streaming setup</a></div>
         </div>
         <div class="pixelbridge-route" aria-label="What runs where">
           <p class="kicker">A launcher, not a cloud provider</p>
@@ -42,51 +42,73 @@
         </div>
       </div>
     </header>
-    <nav class="section-index shell" aria-label="On this page"><span>PixelBridge draft</span><a href="#features">Overview</a><a href="#streaming">Streaming</a><a href="#editions">Editions</a><a href="#downloads">Release status</a><a href="#integrity">Verification</a></nav>
+    <nav class="section-index shell" aria-label="On this page"><span>PixelBridge draft</span><a href="#features">Overview</a><a href="#streaming">Streaming</a><a href="#controllers">Controllers</a><a href="#editions">Editions</a><a href="#downloads">Release status</a><a href="#integrity">Verification</a></nav>
 
     <section class="section shell" id="features" aria-labelledby="features-title">
       <div class="section-heading"><div><p class="kicker">Choose the destination</p><h2 id="features-title">One place to start. Your services stay yours.</h2></div></div>
       <div class="capability-grid">
-        <article><span>Cloud</span><h3>Launch existing services</h3><p>Open Xbox Cloud Gaming or NVIDIA GeForce NOW. PixelBridge does not provide independent cloud rendering or include a service subscription.</p></article>
+        <article><span>Cloud</span><h3>Launch existing services</h3><p>Xbox Cloud Gaming opens in a fresh, dedicated Microsoft Edge profile. GeForce NOW supports its official web player or your selected official native app. Provider accounts, memberships, regions, and game-ownership rules still apply.</p></article>
         <article><span>Local</span><h3>Bring your own library</h3><p>Start local emulation or media tools with content you may legally use. No games, ROMs, BIOS files, or keys are bundled.</p></article>
-        <article><span>Catalog</span><h3>Official emulator routes</h3><p>The planned curated catalog covers NES, SNES, Sega Genesis / Mega Drive, Dreamcast, and N64, linking to official emulator projects rather than game downloads. Final entries await app confirmation.</p></article>
-        <article><span>Control</span><h3>Mappings in every edition</h3><p>All usable Xbox controller mappings and standard importable profiles are included in every edition. Basic controller input is never a paid unlock.</p></article>
+        <article><span>Catalog</span><h3>Official emulator routes</h3><p>NES, SNES, Sega Genesis / Mega Drive, Dreamcast, and N64 have documented native profile targets. Manual executable/media launching and official project links are free; curated descriptions and saved shortcuts start with Free with Ads.</p></article>
+        <article><span>Control</span><h3>Mappings in every edition</h3><p>All usable Xbox controller mappings and standard importable profiles, including native import/export, are included in every edition. Basic controller input is never a paid unlock. <a href="#controllers">Read the format and testing limits</a>.</p></article>
       </div>
+      <p class="notice"><strong>Requirements:</strong> Windows 11 x64 and .NET Framework 4.8. Extract the entire ZIP to a local folder you control and run <code>PixelBridge.exe</code>; keep the runtime scripts, Profiles, Assets, and text guides together. No Electron runtime, background service, game installer, or bundled Sunshine is included. You install and configure external services and emulators separately.</p>
     </section>
 
     <section class="pixelbridge-band" id="streaming" aria-labelledby="streaming-title">
       <div class="shell">
         <div class="section-heading"><div><p class="kicker">Choose the connection</p><h2 id="streaming-title">Go direct by HDMI. Or stream over your LAN.</h2></div></div>
         <div class="download-grid">
-          <article class="download-card"><span class="edition-label">Direct HDMI / every tier</span><h3>Your PC, connected to your TV</h3><p>Connect the Windows PC's HDMI output to your TV. Setup uses supported native Windows display and audio settings and guidance, without a Sunshine video encode/decode path. This is not automatic TV firmware control or a promise of unsupported display modes.</p><p>Local content runs on your PC. Xbox Cloud Gaming and GeForce NOW still have their provider and internet latency when your PC is connected by HDMI.</p></article>
-          <article class="download-card"><span class="edition-label">Local-network streaming</span><h3>Sunshine host, Moonlight client</h3><p>Run local content on your Windows PC, install Sunshine separately, and connect a compatible Moonlight client on your receiving device. Planned customer-friendly onboarding and diagnostics guide the LAN setup; PixelBridge does not replace either project.</p><p>No router WAN port forwarding or UPnP is required for this LAN setup. Your hardware, network, client, and content determine the experience.</p></article>
+          <article class="download-card"><span class="edition-label">Direct HDMI / every tier</span><h3>Your PC, connected to your TV</h3><p>Connect the Windows PC's supported HDMI output to your TV. PixelBridge lists active displays and opens native Windows projection, display, supported resolution/refresh, and sound-output controls. These are guided settings, not automatic output or TV firmware control. Keep a keyboard available; <kbd>Win+P</kbd> then PC screen only is the recovery route.</p><p>HDMI removes the local Sunshine encode/decode path. Xbox Cloud Gaming and GeForce NOW still have their provider and internet latency. The controller stays paired directly to the PC; HDMI-CEC, HDR, and particular display modes are not guaranteed.</p></article>
+          <article class="download-card"><span class="edition-label">Local-network streaming / every tier</span><h3>Sunshine host, Moonlight client</h3><p>Install and configure Sunshine and Moonlight separately. Guided LAN onboarding helps you choose a private home-network address and check the local host response. That response is not proof of receiver pairing, encoding, game compatibility, or TV audio. PixelBridge does not read Sunshine's host configuration, credentials, certificates, or pairing state.</p><p>No router WAN port forwarding or UPnP is required for this LAN setup. Optional firewall guidance previews the executable, address, subnet, ports, and Private profile before consent and Windows elevation; it does not open the host administration port or configure your router. PixelBridge does not automatically change VPN settings or disable security tools.</p></article>
         </div>
-        <p class="notice"><strong>No blanket compatibility or latency promise:</strong> v1.2.0 is planned for Windows x64, but final supported Windows versions, prerequisites, and production-release testing are not confirmed here. PixelBridge does not promise zero lag or support for every TV, streaming stick, controller, HDMI mode, or game.</p>
+        <p class="notice"><strong>Acceptance testing is still incomplete:</strong> actual new emulator/controller gameplay, HDMI display/audio, and clean-PC Sunshine/Moonlight pairing have not been verified. Earlier Xbox streaming success with the predecessor app does not establish those results. PixelBridge does not promise zero lag, lower cloud latency, higher FPS, or support for every TV, streaming stick, controller, HDMI mode, or game.</p>
       </div>
+    </section>
+
+    <section class="section shell" id="controllers" aria-labelledby="controllers-title">
+      <div class="section-heading"><div><p class="kicker">Native profiles / every tier</p><h2 id="controllers-title">Standard profiles and import/export stay free.</h2></div></div>
+      <p class="section-intro">The five standard <code>.rmp</code> remaps and common XInput <code>.cfg</code> bindings target RetroArch 1.21.0 with its Windows XInput joypad driver. Pair your controller directly to the PC. Import or export these standard native files in any edition without paid activation.</p>
+      <div class="pixelbridge-profile-grid">
+        <article><span class="edition-label">NES</span><h3>Nestopia</h3><p><code>NES.rmp</code></p><a href="https://docs.libretro.com/library/nestopia/">Official core documentation</a></article>
+        <article><span class="edition-label">SNES</span><h3>Snes9x</h3><p><code>SNES.rmp</code></p><a href="https://docs.libretro.com/library/snes9x/">Official core documentation</a></article>
+        <article><span class="edition-label">Genesis / Mega Drive</span><h3>Genesis Plus GX</h3><p><code>Genesis.rmp</code></p><a href="https://docs.libretro.com/library/genesis_plus_gx/">Official core documentation</a></article>
+        <article><span class="edition-label">Dreamcast</span><h3>Flycast</h3><p><code>Dreamcast.rmp</code></p><a href="https://docs.libretro.com/library/flycast/">Official core documentation</a></article>
+        <article><span class="edition-label">N64</span><h3>Mupen64Plus-Next</h3><p><code>N64.rmp</code></p><a href="https://docs.libretro.com/library/mupen64plus/">Official core documentation</a></article>
+      </div>
+      <p class="notice"><strong>Reference profiles, not gameplay certification:</strong> native formats have source/schema and round-trip checks, but actual gameplay/controller feel has not been tested with your controller, core, or legally obtained media. Check the emulator's Controls screen. These RetroArch files are not claimed as native imports for standalone alternatives, which use their own input menus.</p>
+      <p class="section-intro pixelbridge-edition-intro">Standard imports remain user-directed: the optional <code>.cfg</code> is appended for a launch without replacing <code>retroarch.cfg</code>, and you load the chosen <code>.rmp</code> in RetroArch. Pro edits port-1 digital remap destinations and saves custom per-system variants; analog axes remain unchanged. Pro's custom native subset import/export is separate from the free standard files. Existing configuration is not overwritten without preview, explicit consent, and a timestamped backup.</p>
     </section>
 
     <section class="section shell" id="editions" aria-labelledby="editions-title">
       <div class="section-heading"><div><p class="kicker">Same input access. Different conveniences.</p><h2 id="editions-title">Controller support is not the upgrade.</h2></div></div>
-      <p class="notice"><strong>Included in every tier:</strong> all usable Xbox controller mappings, standard importable profiles, and direct-HDMI TV output/setup using supported native Windows display and audio settings and guidance. Pro is for advanced editable and saved profile variants and their import/export, not for standard controller configuration or basic HDMI setup.</p>
-      <p class="section-intro pixelbridge-edition-intro">This is the approved edition direction, pending confirmation against the final app. Paid prices, checkout routes, and delivery details have not been approved; none are offered here.</p>
+      <p class="notice"><strong>Included in every tier:</strong> cloud/LAN/manual play, all usable Xbox controller mappings, standard native profiles and import/export, and direct-HDMI TV output/setup through supported Windows settings. Essential input, streaming quality, privacy/security, and HDMI do not differ by edition. Pro is not required for standard controller configuration or basic HDMI setup.</p>
+      <p class="section-intro pixelbridge-edition-intro">Both paid editions are one-time purchases. See current price on Gumroad; no fixed price, subscription, renewal, or seat limit is asserted here. Production release delivery is still pending.</p>
       <div class="pixelbridge-editions">
-        <article data-edition="free"><span class="edition-label">Free / no ads</span><h3>Free</h3><p>Xbox Cloud Gaming and GeForce NOW launching, basic manual emulator links and launching, plus the mappings and standard profiles included in every tier.</p></article>
-        <article data-edition="free-with-ads"><span class="edition-label">Free / affiliate-supported</span><h3>Free with Ads</h3><p>Adds a curated catalog and saved launcher entries, with modest disclosed AdGuard affiliate banners on relevant app menu pages only. No click is required and no banner overlays gameplay.</p></article>
-        <article data-edition="supporter"><span class="edition-label">Paid / ad-free</span><h3>Supporter</h3><p>Ad-free library conveniences, with the same usable controller mappings and standard profiles as Free. Final library details await app confirmation.</p></article>
-        <article data-edition="pro"><span class="edition-label">Paid / advanced profiles</span><h3>Pro</h3><p>Advanced editable and saved profile variants with import/export. All usable mappings and standard importable profiles remain available in every tier.</p></article>
+        <article data-edition="free"><span class="edition-label">Free / no ads</span><h3>Free</h3><p>Essential Xbox Cloud Gaming, GeForce NOW, LAN, HDMI, and manual emulator/media launching, plus official project links and every standard controller profile with native import/export.</p></article>
+        <article data-edition="free-with-ads"><span class="edition-label">Free / affiliate-supported</span><h3>Free with Ads</h3><p>Adds curated descriptions and saved launcher shortcuts. Static disclosed AdGuard affiliate banners appear only on Emulators and Network. No gameplay overlay, view counter, click gate, or automatic banner network request.</p></article>
+        <article data-edition="supporter"><span class="edition-label">One-time purchase / ad-free</span><h3>Supporter</h3><p>The curated catalog and saved launcher shortcuts without affiliate banners. Essential play, HDMI, and standard controller profiles/import/export remain the same as Free.</p><a href="https://quasarlabs3.gumroad.com/l/kdxoac">Supporter: see current price on Gumroad</a></article>
+        <article data-edition="pro"><span class="edition-label">One-time purchase / advanced profiles</span><h3>Pro</h3><p>Supporter's ad-free conveniences plus advanced digital remap editing, saved per-system variants, and custom native subset import/export. Standard profiles and their native import/export remain free in all tiers.</p><a href="https://quasarlabs3.gumroad.com/l/mqkmz">Pro: see current price on Gumroad</a></article>
       </div>
       <p class="notice"><strong>Affiliate disclosure:</strong> the Free with Ads app edition may show relevant AdGuard affiliate recommendations. Quasar Labs may receive compensation after a purchase through those links. Clicking is optional, and these app-only placements do not add advertising to the Quasar Labs website.</p>
+      <div class="integrity-panel"><p class="kicker">Paid extras / not a play license</p><p>Activate with your customer key from the Gumroad receipt, not a product ID. Weekly online status checks happen only while the app is open or on a later launch. A previously verified one-time purchase remains usable indefinitely offline; temporary network errors retain those extras with stale/offline status. An unsuccessful first activation never grants a license.</p><p>Confirmed refund, dispute, disabled license, or other invalidation disables paid extras only: never game/media launching, standard mappings, or your retained library and variant files. Live customer-key activation is an untested acceptance gap; documented license handling and isolated checks are not proof of a completed real purchase/activation.</p></div>
     </section>
 
     <section class="pixelbridge-band" id="downloads" aria-labelledby="downloads-title">
       <div class="shell">
         <div class="section-heading"><div><p class="kicker">Publication is held</p><h2 id="downloads-title">No production download is listed yet.</h2></div><span class="status">Awaiting release facts</span></div>
-        <p class="section-intro">The planned release is v1.2.0 for Windows x64. This draft intentionally has no installer, archive, checkout, or automatic download. Release links will be added only after the production artifacts and their verification material are supplied and checked.</p>
+        <p class="section-intro">The reviewed product is v1.2.0 for Windows 11 x64 / .NET Framework 4.8. This draft has approved purchase routes but no production archive link or automatic download. Release links will be added only after the actual signed artifacts and their verification material are supplied and checked.</p>
         <div class="download-grid">
-          <article class="download-card"><span class="edition-label">Free editions</span><h3>Free / Free with Ads</h3><p>The final release must establish the version, release channel, Windows requirements, archive names, file sizes, SHA-256 checksums, and matching verification bundles before download buttons can be shown.</p><strong class="pixelbridge-pending">Unavailable in this unpublished draft</strong></article>
-          <article class="download-card"><span class="edition-label">Paid editions</span><h3>Supporter / Pro</h3><p>Production delivery and any license requirements must be confirmed along with user-approved Gumroad URLs and pricing. No checkout route or paid package is inferred from another product.</p><strong class="pixelbridge-pending">Purchase and delivery are not listed</strong></article>
+          <article class="download-card"><span class="edition-label">Free editions</span><h3>Free / Free with Ads</h3><p>Production release channel, exact public URLs, file sizes, SHA-256 checksums, matching bundles, and signing identity remain pending. The finalized archive naming contract is not evidence of a published signed release.</p><strong class="pixelbridge-pending">Unavailable in this unpublished draft</strong></article>
+          <article class="download-card"><span class="edition-label">Paid editions</span><h3>Supporter / Pro</h3><p>Approved one-time purchase routes are in the edition comparison. Exact production package delivery and release verification remain pending; no unlocked Pro test build will be listed.</p><a class="text-link" href="#editions">Review editions and approved Gumroad routes</a><strong class="pixelbridge-pending">Production package delivery is not listed</strong></article>
         </div>
       </div>
+    </section>
+
+    <section class="content-section shell prose" aria-labelledby="data-title">
+      <h2 id="data-title">Local settings. Explicit connections.</h2>
+      <p>Settings, saved shortcuts, and the priority undo ledger stay under <code>%LOCALAPPDATA%\PixelBridge</code>. Minimal paid-key/status data is DPAPI-encrypted for your Windows user; full purchase responses, customer keys, and personal purchase details are not logged. Never share license data or your Xbox browser profile.</p>
+      <p>The customer docs specify no analytics, startup task, tray daemon, or automatic banner network request. Explicit provider/download clicks, local health checks, and consented activation/weekly license refresh use their respective endpoints. Closing the menu stops its own polling, not Sunshine, your browser, or a game. For purchase help, use the help route on your Gumroad receipt; general studio support is on the <a href="/support/">Quasar Labs support page</a>.</p>
     </section>
 
     <section class="section shell" id="integrity" aria-labelledby="integrity-title">
@@ -108,7 +130,7 @@
     <div class="shell footer-grid">
       <div><a class="brand" href="/"><img src="/assets/mark.svg?v=20261024-5" alt="" width="30" height="30"><span>Quasar Labs</span></a><p>PixelBridge product draft / Not published.</p></div>
       <div><h2>Explore</h2><a href="/projects/">Projects</a><a href="/about/">About</a><a href="/links/">Official links</a><a href="/support/">Support</a></div>
-      <div><h2>PixelBridge draft</h2><a href="#editions">Planned editions</a><a href="#downloads">Release status</a><a href="#integrity">Verification boundaries</a></div>
+      <div><h2>PixelBridge draft</h2><a href="#editions">Editions</a><a href="#downloads">Release status</a><a href="#integrity">Verification boundaries</a></div>
       <div><h2>Company</h2><a href="https://github.com/QuasarLI">GitHub organization</a><a href="/privacy/">Privacy</a></div>
     </div>
     <div class="shell footer-bottom"><span>&copy; <span data-year>2026</span> Quasar Labs</span><span>Six themes. Zero trackers.</span></div>
