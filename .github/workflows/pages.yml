@@ -3,6 +3,8 @@ name: Deploy static site to Pages
 on:
   push:
     branches: [main]
+  pull_request:
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -24,10 +26,11 @@ jobs:
           python-version: "3.x"
       - name: Check site markup and local links
         run: python scripts/check_site.py
-      - name: Keep PixelBridge draft unpublished
-        run: python -m unittest scripts.test_pixelbridge_draft
+      - name: Check PixelBridge production release presentation
+        run: python -m unittest scripts.test_pixelbridge_site
 
   deploy:
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
