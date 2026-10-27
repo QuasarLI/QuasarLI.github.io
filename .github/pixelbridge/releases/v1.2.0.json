@@ -1,0 +1,223 @@
+{
+  "product": "PixelBridge",
+  "state": "release-ready",
+  "publicationReady": true,
+  "userAuthorizedPublicationAfterSignedRelease": true,
+  "awaitingCoordinatorSignedReleaseHandoff": false,
+  "intendedRoute": "/pixelbridge/",
+  "publicDistributionRepository": "https://github.com/QuasarLI/PixelBridge-Distribution",
+  "sourceVisibility": "private",
+  "documentaryBasis": {
+    "privateSourceCommit": "6322a75cb58544401b8ae6a864ddf98cd558c45a",
+    "files": ["docs/README.txt", "docs/CONTROLLERS.txt", "README.md"],
+    "note": "Product facts were read from these customer/source docs at the exact commit. No private app source or customer state is copied into the site."
+  },
+  "contentReview": {
+    "reportedBy": "Coordinator: app review and distribution independent actual-content review passed",
+    "releaseManifestSha256": "7d480908eafca07ae04fa5ec6e802923200f1253884307ec28e21a086507c424",
+    "scope": "Customer package content review, not a signature, public release, real customer-key activation, or hardware/gameplay acceptance result"
+  },
+  "confirmedReleasePlan": {
+    "version": "1.2.0",
+    "platform": "Windows 11 x64 / .NET Framework 4.8",
+    "expectedArtifactNames": [
+      "PixelBridge-v1.2.0-Free-win-x64.zip",
+      "PixelBridge-v1.2.0-FreewithAds-win-x64.zip",
+      "PixelBridge-v1.2.0-Supporter-win-x64.zip",
+      "PixelBridge-v1.2.0-Pro-win-x64.zip"
+    ],
+    "note": "Exact public production archive names independently matched to the release API, manifest and SHA256SUMS; the coordinator's final downloaded-artifact/signature/EXE verification handoff has passed."
+  },
+  "hostingBoundary": {
+    "productDirectory": "pixelbridge",
+    "releaseRecord": ".github/pixelbridge/release.json",
+    "note": "The site repository is public. This record contains public release identifiers and approved facts only, never private app source, customer state, or license keys."
+  },
+  "releaseFacts": {
+    "version": "1.2.0",
+    "channel": "stable",
+    "tag": "v1.2.0",
+    "releaseId": 424286114,
+    "publishedAt": "2026-10-26T13:53:03Z",
+    "releaseAssetCount": 18,
+    "releaseUrl": "https://github.com/QuasarLI/PixelBridge-Distribution/releases/tag/v1.2.0",
+    "releaseNotesUrl": "https://github.com/QuasarLI/PixelBridge-Distribution/releases/tag/v1.2.0",
+    "metadataMatchEvidence": {
+      "status": "metadata-matched-only",
+      "method": "Live release API names/sizes/digests matched to downloaded release-manifest.json and SHA256SUMS. Metadata file byte hashes/sizes matched to API digests. Published provenance source/manifest/distribution/run and certificate SAN/issuer matched to expected docs/workflow values.",
+      "scope": "This is not cryptographic validation of signatures, final downloaded archives, contained EXEs, or production runtime acceptance. Distribution owns those final checks.",
+      "releaseManifestSha256": "7d480908eafca07ae04fa5ec6e802923200f1253884307ec28e21a086507c424",
+      "distributionCommit": "54450c3fcec56423c0521c9506d312fad8fbbfca"
+    },
+    "supportedWindowsVersions": ["Windows 11"],
+    "architectures": ["x64"],
+    "runtimeAndInstallPrerequisites": {
+      "runtime": ".NET Framework 4.8",
+      "installation": "Extract the entire ZIP to a local folder you control; run PixelBridge.exe with runtime scripts, Profiles, Assets, and text guides kept together.",
+      "cloud": "Xbox Cloud uses a fresh dedicated Microsoft Edge profile. GeForce NOW supports its official web player or the user's selected official native app. Users provide accounts/subscriptions subject to provider requirements.",
+      "lan": "Sunshine and Moonlight are separately installed/configured projects; Sunshine is not bundled. LAN use requires no router WAN port forwarding or UPnP.",
+      "hdmi": "Supported PC HDMI output and TV input; guided native Windows display/audio settings, not automatic TV control. Controller stays paired directly to the PC.",
+      "notIncluded": ["Games", "ROMs", "BIOS files", "Encryption keys", "Firmware", "Customer accounts", "Sunshine", "Electron runtime", "Background service", "Game installer"]
+    },
+    "productionCompatibilityEvidence": {
+      "documentedChecks": "Isolated source/schema/round-trip checks for native profiles and isolated license/edition checks; coordinator-reported package-content reviews.",
+      "untestedAcceptanceGaps": [
+        "Real customer Gumroad key activation",
+        "Actual new emulator/controller gameplay",
+        "HDMI display and TV audio",
+        "Clean-PC Sunshine/Moonlight pairing"
+      ],
+      "priorXboxStreaming": "Success with the installed predecessor is not evidence of these new-feature acceptance results.",
+      "limits": "No zero-lag, FPS, cloud-latency reduction, universal hardware, HDMI-CEC, HDR, or display-mode guarantee."
+    },
+    "documentedFeatureMatrix": [
+      {"feature": "Xbox Cloud / GeForce NOW / LAN / guided direct HDMI", "editions": ["free", "free-with-ads", "supporter", "pro"]},
+      {"feature": "Manual executable/media launching and official project links", "editions": ["free", "free-with-ads", "supporter", "pro"]},
+      {"feature": "All five standard Xbox native .rmp remaps and common XInput .cfg bindings, with standard native import/export", "editions": ["free", "free-with-ads", "supporter", "pro"]},
+      {"feature": "Curated descriptions and saved launcher shortcuts", "editions": ["free-with-ads", "supporter", "pro"]},
+      {"feature": "Static disclosed AdGuard affiliate banners on Emulators and Network only; no automatic banner network request, overlay, counter, or click gate", "editions": ["free-with-ads"]},
+      {"feature": "Advanced port-1 digital remap editing, saved per-system variants, and custom native subset import/export; analog axes unchanged", "editions": ["pro"]}
+    ],
+    "documentedNativeProfileTargets": {
+      "frontend": "RetroArch 1.21.0 / Windows XInput joypad driver",
+      "standardBindings": "PixelBridge-XInput.cfg",
+      "profiles": [
+        {"system": "NES", "core": "Nestopia", "file": "NES.rmp", "documentationUrl": "https://docs.libretro.com/library/nestopia/"},
+        {"system": "SNES", "core": "Snes9x", "file": "SNES.rmp", "documentationUrl": "https://docs.libretro.com/library/snes9x/"},
+        {"system": "Sega Genesis / Mega Drive", "core": "Genesis Plus GX", "file": "Genesis.rmp", "documentationUrl": "https://docs.libretro.com/library/genesis_plus_gx/"},
+        {"system": "Dreamcast", "core": "Flycast", "file": "Dreamcast.rmp", "documentationUrl": "https://docs.libretro.com/library/flycast/"},
+        {"system": "N64", "core": "Mupen64Plus-Next", "file": "N64.rmp", "documentationUrl": "https://docs.libretro.com/library/mupen64plus/"}
+      ],
+      "limits": "Reference profiles, not actual gameplay/controller certification. Standard native imports/exports are free. Standalone alternatives use their own input menus; RetroArch files are not claimed as their native imports."
+    },
+    "approvedBrandingAssets": [
+      {"path": "assets/icon-pixelbridge.png", "dimensions": [600, 600], "sizeBytes": 63474, "sha256": "a4b42c9fb06376d261f690afe5ff78decdae8a40fd49fd8bb00b3aeef102d162"},
+      {"path": "assets/banner-pixelbridge.png", "dimensions": [1920, 1080], "sizeBytes": 624905, "sha256": "fecd35f52335b851eb82de3692010f907c31d12affe54c35d415f0bb944685eb"}
+    ],
+    "checksumManifestUrl": "https://github.com/QuasarLI/PixelBridge-Distribution/releases/download/v1.2.0/SHA256SUMS",
+    "checksumManifestSha256": "bca489326c7ffe7c12e4d78a8680dd742531e746456172921a4702939f42a033",
+    "checksumManifestBundleUrl": "https://github.com/QuasarLI/PixelBridge-Distribution/releases/download/v1.2.0/SHA256SUMS.sigstore.json",
+    "releaseManifestUrl": "https://github.com/QuasarLI/PixelBridge-Distribution/releases/download/v1.2.0/release-manifest.json",
+    "releaseManifestBundleUrl": "https://github.com/QuasarLI/PixelBridge-Distribution/releases/download/v1.2.0/release-manifest.json.sigstore.json",
+    "provenanceUrl": "https://github.com/QuasarLI/PixelBridge-Distribution/releases/download/v1.2.0/provenance.json",
+    "provenanceSha256": "933f9978f1c3e87eb745d685c970dacbb426fee52fd3ffaa9359a6d9e083df85",
+    "provenanceBundleUrl": "https://github.com/QuasarLI/PixelBridge-Distribution/releases/download/v1.2.0/provenance.json.sigstore.json",
+    "sigstoreOidcIssuer": "https://token.actions.githubusercontent.com",
+    "sigstoreCertificateIdentity": "https://github.com/QuasarLI/PixelBridge-Distribution/.github/workflows/release.yml@refs/heads/main",
+    "signingWorkflowUrl": "https://github.com/QuasarLI/PixelBridge-Distribution/blob/54450c3fcec56423c0521c9506d312fad8fbbfca/.github/workflows/release.yml",
+    "signingRunUrl": "https://github.com/QuasarLI/PixelBridge-Distribution/actions/runs/40334369634/attempts/1",
+    "signingRunConclusion": "success",
+    "verificationInstructions": {
+      "url": "https://github.com/QuasarLI/PixelBridge-Distribution/blob/4c2937b867a1f6b5fbf04d2875e51d1b44f3ad6e/docs/VERIFYING.md",
+      "verificationDocCommit": "4c2937b867a1f6b5fbf04d2875e51d1b44f3ad6e",
+      "tool": "Trusted cosign v3 from official Sigstore installation guidance",
+      "identityPolicy": "Exact certificate identity and OIDC issuer; never skip signature, identity, issuer, or transparency-log checks.",
+      "steps": "Verify chosen ZIP plus release-manifest.json, provenance.json, and SHA256SUMS with matching bundles. Match product/version/size/hash and checksum line; check provenance source, distribution, manifest digest and run against release notes. Extract only verified ZIP into new empty edition-specific directory and verify contained EXE with its edition-specific bundle before launch.",
+      "documentationNote": "This post-release docs-only commit corrects the release status; it does not change the release tag, signed workflow commit, artifacts, or signatures."
+    },
+    "artifactVerificationEvidence": {
+      "reportedBy": "Final coordinator-validated distribution handoff",
+      "status": "passed",
+      "downloadedAssetCount": 18,
+      "verifiedSigstoreSignatureCount": 11,
+      "verifiedContainedExeCount": 4,
+      "tool": "Official cosign v3.1.4 Windows; official metadata/checksum verified",
+      "approvedOriginals": "Four ZIPs and release manifest are byte-identical to approved customer originals.",
+      "provenanceMatch": "Signed SHA256SUMS/provenance agree on source 6322a75cb58544401b8ae6a864ddf98cd558c45a, workflow 54450c3fcec56423c0521c9506d312fad8fbbfca, manifest 7d480908eafca07ae04fa5ec6e802923200f1253884307ec28e21a086507c424, run 40334369634 attempt 1, actual tag/release notes and all 18 asset metadata.",
+      "certificateEvidence": "After cryptographic verification, all 11 released X.509 certificates were read: each binds the exact accepted workflow identity, issuer, and signed workflow SHA 54450c3fcec56423c0521c9506d312fad8fbbfca.",
+      "limits": "No customer app execution/install changes or claim of hardware/gameplay/real-customer-key activation acceptance. No claim that Gumroad package uploads or delivery were verified."
+    },
+    "productionBuildExcludesTestUnlocks": {
+      "documentedBoundary": "Customer package export excludes the separately compiled Local Test Pro build, test executables, receipts, previews, private source, user state, and customer entitlements. No production runtime test key or unlock switch.",
+      "contentReviewManifestSha256": "7d480908eafca07ae04fa5ec6e802923200f1253884307ec28e21a086507c424",
+      "finalReleaseRecheckRequired": false
+    },
+    "privacyAndSupportFacts": {
+      "localData": "%LOCALAPPDATA%\\PixelBridge",
+      "licenseStorage": "Minimal key/status is DPAPI-encrypted for the current Windows user; no raw purchase response, full PII, or customer key logging.",
+      "network": "No analytics, startup task, tray daemon, or automatic banner network request. Explicit provider/download clicks, local health checks, and consented activation/weekly refresh contact their respective endpoints.",
+      "sunshineBoundary": "No reading of host configuration, apps list, credentials, certificates, or pairing state. A local host response does not prove pairing/encoding/audio/game compatibility.",
+      "networkChanges": "No required WAN forwarding/UPnP, automatic VPN changes, router configuration, or disabling of security tools. Optional Private-profile firewall action previews exact scope and asks consent/elevation; it does not open Sunshine administration.",
+      "closingApp": "Stops its own polling, not Sunshine, a browser, or a game.",
+      "support": "General studio support: /support/. Purchase help: route supplied by the customer's Gumroad receipt."
+    },
+    "paidLicensePolicy": {
+      "purchase": "One-time purchase for Supporter and Pro",
+      "activation": "Matching customer key from Gumroad receipt; fixed edition product ID and official HTTPS API, increment_uses_count=false. Failed first activation never grants access.",
+      "onlineRecheck": "Weekly while the app is open or on later launch",
+      "offline": "Previously verified one-time purchases remain usable indefinitely offline. Temporary network errors retain prior extras with stale/offline status.",
+      "confirmedInvalidation": "Removes paid extras only, never games, standard mappings, media, or retained library/variant files.",
+      "acceptanceGap": "No real customer-key/API activation acceptance test has been completed."
+    },
+    "editions": [
+      {
+        "id": "free",
+        "displayName": "Free",
+        "availability": "public-production-release",
+        "artifactName": "PixelBridge-v1.2.0-Free-win-x64.zip",
+        "artifactUrl": "https://github.com/QuasarLI/PixelBridge-Distribution/releases/download/v1.2.0/PixelBridge-v1.2.0-Free-win-x64.zip",
+        "sizeBytes": 155006,
+        "sha256": "8e9fcb082f0e386c8f6881be8b73c64fd90dd7e14b4fdc2b77a4c4e5c77cc5d6",
+        "sigstoreBundleUrl": "https://github.com/QuasarLI/PixelBridge-Distribution/releases/download/v1.2.0/PixelBridge-v1.2.0-Free-win-x64.zip.sigstore.json",
+        "exeSigstoreBundleUrl": "https://github.com/QuasarLI/PixelBridge-Distribution/releases/download/v1.2.0/PixelBridge-v1.2.0-Free-win-x64-PixelBridge.exe.sigstore.json",
+        "exeSha256": "66790d7d505e1f4010d15e9db70146336e26278fdf9da8ccabc0a0e9d97c2b27",
+        "exeSizeBytes": 165888
+      },
+      {
+        "id": "free-with-ads",
+        "displayName": "Free with Ads",
+        "availability": "public-production-release",
+        "artifactName": "PixelBridge-v1.2.0-FreewithAds-win-x64.zip",
+        "artifactUrl": "https://github.com/QuasarLI/PixelBridge-Distribution/releases/download/v1.2.0/PixelBridge-v1.2.0-FreewithAds-win-x64.zip",
+        "sizeBytes": 179911,
+        "sha256": "0da81bd7e06fcbffd627ccf20926564563d14c0a048e94e046f103836e9252e6",
+        "sigstoreBundleUrl": "https://github.com/QuasarLI/PixelBridge-Distribution/releases/download/v1.2.0/PixelBridge-v1.2.0-FreewithAds-win-x64.zip.sigstore.json",
+        "exeSigstoreBundleUrl": "https://github.com/QuasarLI/PixelBridge-Distribution/releases/download/v1.2.0/PixelBridge-v1.2.0-FreewithAds-win-x64-PixelBridge.exe.sigstore.json",
+        "exeSha256": "9cd0c1f93421ea45aa5152fc24cae5a3fb44e0075ed67dbeb565ada58d568cb4",
+        "exeSizeBytes": 167936
+      },
+      {
+        "id": "supporter",
+        "displayName": "Supporter",
+        "availability": "public-production-release-license-gated-extras",
+        "artifactName": "PixelBridge-v1.2.0-Supporter-win-x64.zip",
+        "artifactUrl": "https://github.com/QuasarLI/PixelBridge-Distribution/releases/download/v1.2.0/PixelBridge-v1.2.0-Supporter-win-x64.zip",
+        "sizeBytes": 155006,
+        "sha256": "0fd01960f7fcedc58859c87fadc1d02e58378f224e76d56721e7b015762525ea",
+        "sigstoreBundleUrl": "https://github.com/QuasarLI/PixelBridge-Distribution/releases/download/v1.2.0/PixelBridge-v1.2.0-Supporter-win-x64.zip.sigstore.json",
+        "exeSigstoreBundleUrl": "https://github.com/QuasarLI/PixelBridge-Distribution/releases/download/v1.2.0/PixelBridge-v1.2.0-Supporter-win-x64-PixelBridge.exe.sigstore.json",
+        "exeSha256": "f8917ebab882a85c8e6e699247c547e4172b6fc117fcc9292f24bab6a482365c",
+        "exeSizeBytes": 165888,
+        "deliveryMethod": "Public production GitHub release ZIP; matching Gumroad receipt key required for paid extras. No Gumroad package-byte delivery verification is claimed.",
+        "licenseRequirements": "Matching customer receipt key activates paid extras only; see paidLicensePolicy.",
+        "approvedCheckoutUrl": "https://quasarlabs3.gumroad.com/l/kdxoac",
+        "approvedPriceAndCurrency": null,
+        "priceDisplay": "See current price on Gumroad",
+        "oneTimePurchase": true
+      },
+      {
+        "id": "pro",
+        "displayName": "Pro",
+        "availability": "public-production-release-license-gated-extras",
+        "artifactName": "PixelBridge-v1.2.0-Pro-win-x64.zip",
+        "artifactUrl": "https://github.com/QuasarLI/PixelBridge-Distribution/releases/download/v1.2.0/PixelBridge-v1.2.0-Pro-win-x64.zip",
+        "sizeBytes": 155005,
+        "sha256": "0b103dd3fd6daa149a95c8d3d6a862b84b4e3f72467d32c8fd3f290b9bf02f54",
+        "sigstoreBundleUrl": "https://github.com/QuasarLI/PixelBridge-Distribution/releases/download/v1.2.0/PixelBridge-v1.2.0-Pro-win-x64.zip.sigstore.json",
+        "exeSigstoreBundleUrl": "https://github.com/QuasarLI/PixelBridge-Distribution/releases/download/v1.2.0/PixelBridge-v1.2.0-Pro-win-x64-PixelBridge.exe.sigstore.json",
+        "exeSha256": "dd11802de505be291cf262f30eee4b48f209e4928ff05956efc920a91eea4495",
+        "exeSizeBytes": 165888,
+        "deliveryMethod": "Public production GitHub release ZIP; matching Gumroad receipt key required for paid extras. No Gumroad package-byte delivery verification is claimed.",
+        "licenseRequirements": "Matching customer receipt key activates paid extras only; see paidLicensePolicy.",
+        "approvedCheckoutUrl": "https://quasarlabs3.gumroad.com/l/mqkmz",
+        "approvedPriceAndCurrency": null,
+        "priceDisplay": "See current price on Gumroad",
+        "oneTimePurchase": true
+      }
+    ]
+  },
+  "validationCommands": [
+    "python scripts/check_site.py",
+    "python -m unittest scripts.test_pixelbridge_site"
+  ]
+}
