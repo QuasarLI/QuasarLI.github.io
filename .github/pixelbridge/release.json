@@ -4,7 +4,7 @@
   "publicationReady": true,
   "userAuthorizedPublicationAfterSignedRelease": true,
   "awaitingCoordinatorSignedReleaseHandoff": false,
-  "awaitingCoordinatorIntegrationReview": true,
+  "awaitingCoordinatorIntegrationReview": false,
   "intendedRoute": "/pixelbridge/",
   "publicDistributionRepository": "https://github.com/QuasarLI/PixelBridge-Distribution",
   "sourceVisibility": "private",
@@ -27,7 +27,7 @@
       "PixelBridge-v1.3.0-Supporter-win-x64.zip",
       "PixelBridge-v1.3.0-Pro-win-x64.zip"
     ],
-    "note": "Final 18-asset download, 11-signature and four-contained-EXE verification was confirmed by the coordinator. Website integration still awaits coordinator review; no merge or deployment is authorized by this prepared record."
+    "note": "Final 18-asset download, 11-signature and four-contained-EXE verification was confirmed by the coordinator. Coordinator review of the prepared content is complete; website deployment still requires a normal PR and subsequent exact-head approval. No merge or deployment is authorized by this record."
   },
   "hostingBoundary": {
     "productDirectory": "pixelbridge",
