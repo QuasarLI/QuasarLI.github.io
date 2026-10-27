@@ -16,9 +16,9 @@
 .pixelbridge-profile-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem}.pixelbridge-profile-grid article{padding:1.2rem;border:1px solid var(--line);border-radius:.85rem;background:var(--surface)}
 .pixelbridge-profile-grid h3{font-size:1.05rem;overflow-wrap:anywhere}.pixelbridge-profile-grid p{color:var(--muted)}.pixelbridge-profile-grid a{color:var(--accent);font-size:.8rem;font-weight:760}
 .pixelbridge-detail .detail-card-head{flex-wrap:wrap}
-.pixelbridge-artifact{min-width:0;margin:0 0 1.2rem;font-size:.76rem}.pixelbridge-artifact dt{margin-top:.65rem;color:var(--muted);font-weight:760}.pixelbridge-artifact dd{margin:.2rem 0 0;overflow-wrap:anywhere}
+.pixelbridge-artifact{min-width:0;margin:0 0 1.2rem;font-size:.76rem;overflow-wrap:anywhere}.pixelbridge-artifact dt{margin-top:.65rem;color:var(--muted);font-weight:760}.pixelbridge-artifact dd{margin:.2rem 0 0;overflow-wrap:anywhere}
 .pixelbridge-downloads{grid-template-columns:repeat(2,minmax(0,1fr))}.pixelbridge-downloads .download-card{min-width:0}.pixelbridge-downloads .download-card .button{margin-top:auto}
-.pixelbridge-verification{margin-top:1.2rem}.pixelbridge-verification p{font-size:.85rem}
+.pixelbridge-verification{margin-top:1.2rem;scroll-margin-top:10rem}.pixelbridge-verification p{font-size:.85rem}
 #features,#controllers,#editions,#integrity{scroll-margin-top:10rem}
 @media(max-width:980px){.pixelbridge-hero-grid{grid-template-columns:1fr}.pixelbridge-editions,.pixelbridge-profile-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:760px){.pixelbridge-band{padding:4rem 0}.pixelbridge-editions,.pixelbridge-profile-grid,.pixelbridge-downloads{grid-template-columns:1fr}.pixelbridge-hero h1{font-size:clamp(3rem,13vw,5rem)}}

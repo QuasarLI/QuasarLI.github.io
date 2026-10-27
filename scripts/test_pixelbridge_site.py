@@ -19,16 +19,17 @@ PROFILE_DOC_URLS = {
     for core in ("nestopia", "snes9x", "genesis_plus_gx", "flycast", "mupen64plus")
 }
 RELEASE_BASE = "https://github.com/QuasarLI/PixelBridge-Distribution"
-ASSET_BASE = f"{RELEASE_BASE}/releases/download/v1.2.0/"
-DISTRIBUTION_COMMIT = "54450c3fcec56423c0521c9506d312fad8fbbfca"
+ASSET_BASE = f"{RELEASE_BASE}/releases/download/v1.3.0/"
+DISTRIBUTION_COMMIT = "d3eaad89d4470deb4cbf34750d28ac2c42b54132"
 SIGNING_IDENTITY = f"{RELEASE_BASE}/.github/workflows/release.yml@refs/heads/main"
 OIDC_ISSUER = "https://token.actions.githubusercontent.com"
 ZIP_FACTS = {
-    "free": (155006, "8e9fcb082f0e386c8f6881be8b73c64fd90dd7e14b4fdc2b77a4c4e5c77cc5d6"),
-    "free-with-ads": (179911, "0da81bd7e06fcbffd627ccf20926564563d14c0a048e94e046f103836e9252e6"),
-    "supporter": (155006, "0fd01960f7fcedc58859c87fadc1d02e58378f224e76d56721e7b015762525ea"),
-    "pro": (155005, "0b103dd3fd6daa149a95c8d3d6a862b84b4e3f72467d32c8fd3f290b9bf02f54"),
+    "free": (172023, "ff118409724c4dbc65bd72cb30cea81bb894866cc9bcfe3727b691b3f0f9deda"),
+    "free-with-ads": (196834, "6c661177502214e3c76ef9514432d0417da5ed18986282a0f7ecf8d0917e1ea3"),
+    "supporter": (172025, "10063acf1de98c290d4baf157eac797f24b635d6261050eef12afaa70e066a24"),
+    "pro": (172023, "faa421eb38fa26f978764be4c2aa36c2eb728144785499f0b3a473c6a205170c"),
 }
+LEGACY_RECORD = ROOT / ".github" / "pixelbridge" / "releases" / "v1.2.0.json"
 
 
 class ProductParser(HTMLParser):
@@ -86,40 +87,44 @@ class PixelBridgeSiteTests(unittest.TestCase):
         self.assertIs(contract["publicationReady"], True)
         self.assertIs(contract["userAuthorizedPublicationAfterSignedRelease"], True)
         self.assertIs(contract["awaitingCoordinatorSignedReleaseHandoff"], False)
+        self.assertIs(contract["awaitingCoordinatorIntegrationReview"], True)
         self.assertEqual(contract["sourceVisibility"], "private")
         self.assertEqual(contract["intendedRoute"], "/pixelbridge/")
         self.assertEqual(
             contract["publicDistributionRepository"],
             "https://github.com/QuasarLI/PixelBridge-Distribution",
         )
-        self.assertEqual(contract["confirmedReleasePlan"]["version"], "1.2.0")
+        self.assertEqual(contract["confirmedReleasePlan"]["version"], "1.3.0")
         self.assertEqual(
             contract["documentaryBasis"]["privateSourceCommit"],
-            "6322a75cb58544401b8ae6a864ddf98cd558c45a",
+            "5f74e07189f62540b6b4e8df0236d0c5ba37370d",
         )
         self.assertEqual(
             contract["contentReview"]["releaseManifestSha256"],
-            "7d480908eafca07ae04fa5ec6e802923200f1253884307ec28e21a086507c424",
+            "a82a2af9313565e6d00e8f96fc1986b7f3dbbf217d9035c79c5d4a1dde778ef0",
         )
         self.assertEqual(
             contract["confirmedReleasePlan"]["expectedArtifactNames"],
             [
-                f"PixelBridge-v1.2.0-{edition}-win-x64.zip"
+                f"PixelBridge-v1.3.0-{edition}-win-x64.zip"
                 for edition in ("Free", "FreewithAds", "Supporter", "Pro")
             ],
         )
         facts = contract["releaseFacts"]
-        self.assertEqual(facts["version"], "1.2.0")
+        self.assertEqual(facts["version"], "1.3.0")
         self.assertEqual(facts["supportedWindowsVersions"], ["Windows 11"])
         self.assertEqual(facts["architectures"], ["x64"])
         self.assertEqual(
             facts["runtimeAndInstallPrerequisites"]["runtime"], ".NET Framework 4.8"
         )
         self.assertEqual(facts["channel"], "stable")
-        self.assertEqual(facts["tag"], "v1.2.0")
-        self.assertEqual(facts["releaseId"], 424286114)
+        self.assertEqual(facts["tag"], "v1.3.0")
+        self.assertEqual(facts["releaseId"], 424891449)
+        self.assertEqual(facts["distributionMode"], "nonbundled")
+        self.assertEqual(facts["manifestSchemaVersion"], 1)
+        self.assertEqual(facts["releaseManifestSizeBytes"], 8197)
         self.assertEqual(facts["releaseAssetCount"], 18)
-        self.assertEqual(facts["releaseUrl"], f"{RELEASE_BASE}/releases/tag/v1.2.0")
+        self.assertEqual(facts["releaseUrl"], f"{RELEASE_BASE}/releases/tag/v1.3.0")
         self.assertEqual(facts["releaseNotesUrl"], facts["releaseUrl"])
         self.assertEqual(facts["sigstoreCertificateIdentity"], SIGNING_IDENTITY)
         self.assertEqual(facts["sigstoreOidcIssuer"], OIDC_ISSUER)
@@ -130,11 +135,11 @@ class PixelBridgeSiteTests(unittest.TestCase):
         self.assertEqual(facts["signingRunConclusion"], "success")
         self.assertEqual(
             facts["signingRunUrl"],
-            f"{RELEASE_BASE}/actions/runs/40334369634/attempts/1",
+            f"{RELEASE_BASE}/actions/runs/40428106814/attempts/1",
         )
         self.assertEqual(
             facts["verificationInstructions"]["url"],
-            f"{RELEASE_BASE}/blob/4c2937b867a1f6b5fbf04d2875e51d1b44f3ad6e/docs/VERIFYING.md",
+            f"{RELEASE_BASE}/blob/{DISTRIBUTION_COMMIT}/docs/VERIFYING.md",
         )
         self.assertEqual(
             facts["metadataMatchEvidence"]["status"], "metadata-matched-only"
@@ -233,6 +238,20 @@ class PixelBridgeSiteTests(unittest.TestCase):
             )
         }
         release_links.add(facts["verificationInstructions"]["url"])
+        legacy = json.loads(LEGACY_RECORD.read_text(encoding="utf-8"))["releaseFacts"]
+        release_links.update(
+            legacy[field] for field in (
+                "releaseUrl", "checksumManifestUrl", "checksumManifestBundleUrl",
+                "releaseManifestUrl", "releaseManifestBundleUrl",
+                "provenanceUrl", "provenanceBundleUrl",
+            )
+        )
+        for edition in legacy["editions"]:
+            release_links.update(
+                edition[field] for field in (
+                    "artifactUrl", "sigstoreBundleUrl", "exeSigstoreBundleUrl"
+                )
+            )
         for edition in facts["editions"]:
             release_links.update(
                 edition[field] for field in (
@@ -260,6 +279,7 @@ class PixelBridgeSiteTests(unittest.TestCase):
                                 *PROFILE_DOC_URLS,
                                 *release_links,
                                 "https://docs.sigstore.dev/cosign/system_config/installation/",
+                                "https://github.com/LizardByte/Sunshine/releases",
                             },
                         )
                         continue
@@ -300,7 +320,7 @@ class PixelBridgeSiteTests(unittest.TestCase):
             "A previously verified one-time purchase remains usable indefinitely offline",
             "Live customer-key activation is an untested acceptance gap",
             "Earlier Xbox streaming success with the predecessor app does not establish",
-            "actual new emulator/controller gameplay, HDMI display/audio, and clean-PC Sunshine/Moonlight pairing have not been verified",
+            "real service/cloud use, physical controller menus, new emulator/controller gameplay, TV hardware/HDMI display/audio, and clean-PC Sunshine/Moonlight pairing have not been verified",
             "not proof of receiver pairing, encoding, game compatibility, or TV audio",
             "Pro edits port-1 digital remap destinations",
             "analog axes remain unchanged",
@@ -342,15 +362,94 @@ class PixelBridgeSiteTests(unittest.TestCase):
         for value in (
             SIGNING_IDENTITY, OIDC_ISSUER, "$ErrorActionPreference = 'Stop'",
             "--certificate-identity $identity", "--certificate-oidc-issuer $issuer",
+            "--certificate-github-workflow-sha $workflow", DISTRIBUTION_COMMIT,
             "release-manifest.json", "provenance.json", "SHA256SUMS",
             "$LASTEXITCODE -ne 0", "$file.Length -ne $entry[0].size_bytes",
             "$hash -cne $entry[0].sha256",
-            "PixelBridge-v1.2.0-Free-win-x64-PixelBridge.exe.sigstore.json",
+            "$manifest.schema_version -ne 1", "$provenance.schema_version -ne 1",
+            "$manifest.distribution_mode -cne 'nonbundled'",
+            "$provenance.distribution_mode -cne 'nonbundled'",
+            "$manifest.source_commit -cne $provenance.source_commit",
+            "$provenance.distribution_commit -cne $workflow",
+            "$provenance.manifest_sha256 -cne $manifestHash",
+            "$provenance.workflow_identity -cne $identity",
+            "$provenance.oidc_issuer -cne $issuer",
+            "40428106814/attempts/1",
+            "a82a2af9313565e6d00e8f96fc1986b7f3dbbf217d9035c79c5d4a1dde778ef0",
+            "5f74e07189f62540b6b4e8df0236d0c5ba37370d",
+            "if (Test-Path -LiteralPath '.\\verified-Free')",
+            "PixelBridge-v1.3.0-Free-win-x64-PixelBridge.exe.sigstore.json",
         ):
             self.assertIn(value, commands)
         self.assertNotIn("--insecure", commands)
         self.assertNotIn("--ignore", commands)
         self.assertNotIn("No signed release exists", text)
+
+    def test_nonbundled_browser_hardware_and_foreground_controller_boundaries(self):
+        text = (PRODUCT / "index.html").read_text(encoding="utf-8")
+        for phrase in (
+            "Every tier saves an Edge or Firefox preference",
+            "Firefox Xbox is experimental and requires explicit consent",
+            "explicit Edge fallback",
+            "No official Xbox Firefox support or universally faster browser",
+            "Sunshine is not included in any edition",
+            "never downloads or invokes a Sunshine installer",
+            "can start or reuse your user-configured host",
+            "user-designated checklists, not a tested-model list",
+            "TV Ethernet alone cannot decode the video",
+            "Matched HDMI extender / HDBaseT",
+            "AV-over-IP",
+            "Passive RJ45-to-HDMI adapters are not a guaranteed substitute",
+            "no hardware purchases",
+            "no automatic adapter, hotspot, router or TV-network changes",
+            "on/off checkbox stays visible above every tab",
+            "Mouse and keyboard always remain available",
+            "D-pad/left stick moves focus and scrolls",
+            "closes only PixelBridge",
+            "only PixelBridge's foreground main window",
+            "Text entry, remap grids, dialogs and sign-in still need keyboard/mouse",
+            "existing matching Supporter/Pro purchases remain eligible",
+            "the same Windows user",
+            "DPAPI license format and existing settings continuity are preserved",
+        ):
+            self.assertIn(phrase.casefold(), text.casefold())
+        facts = json.loads(RELEASE_RECORD.read_text(encoding="utf-8"))["releaseFacts"]
+        features = facts["documentedFeatureMatrix"]
+        for prefix in (
+            "Saved Edge/Firefox", "Saved user-designated TV", "Saved XInput controller",
+        ):
+            matching = [item for item in features if item["feature"].startswith(prefix)]
+            self.assertEqual(len(matching), 1)
+            self.assertEqual(set(matching[0]["editions"]), set(ZIP_FACTS))
+        parser = ProductParser()
+        parser.feed(text)
+        for link in parser.links:
+            self.assertNotIn("LOCALTEST", link.upper())
+            self.assertNotIn("LOCAL-TEST", link.upper())
+            self.assertFalse(urlparse(link).path.lower().endswith(".msi"))
+
+    def test_previous_release_record_and_all_asset_links_are_preserved(self):
+        legacy_text = LEGACY_RECORD.read_text(encoding="utf-8")
+        self.assertEqual(
+            hashlib.sha256(legacy_text.encode("utf-8")).hexdigest(),
+            "d8400fe52f771dafc8309e95e13fd244150db29969e192fd2954b9161093bc16",
+        )
+        legacy = json.loads(legacy_text)["releaseFacts"]
+        self.assertEqual(legacy["version"], "1.2.0")
+        self.assertEqual(legacy["releaseId"], 424286114)
+        parser = ProductParser()
+        text = (PRODUCT / "index.html").read_text(encoding="utf-8")
+        parser.feed(text)
+        self.assertIn("release-history", parser.ids)
+        self.assertIn(legacy["releaseUrl"], parser.links)
+        old_base = f"{RELEASE_BASE}/releases/download/v1.2.0/"
+        self.assertEqual(
+            len({link for link in parser.links if link.startswith(old_base)}), 18
+        )
+        for edition in legacy["editions"]:
+            self.assertIn(edition["sha256"], text)
+            for field in ("artifactUrl", "sigstoreBundleUrl", "exeSigstoreBundleUrl"):
+                self.assertIn(edition[field], parser.links)
 
     def test_checkout_and_profile_links_are_present_without_hardcoded_prices(self):
         text = (PRODUCT / "index.html").read_text(encoding="utf-8")
