@@ -87,7 +87,7 @@ class PixelBridgeSiteTests(unittest.TestCase):
         self.assertIs(contract["publicationReady"], True)
         self.assertIs(contract["userAuthorizedPublicationAfterSignedRelease"], True)
         self.assertIs(contract["awaitingCoordinatorSignedReleaseHandoff"], False)
-        self.assertIs(contract["awaitingCoordinatorIntegrationReview"], True)
+        self.assertIs(contract["awaitingCoordinatorIntegrationReview"], False)
         self.assertEqual(contract["sourceVisibility"], "private")
         self.assertEqual(contract["intendedRoute"], "/pixelbridge/")
         self.assertEqual(
