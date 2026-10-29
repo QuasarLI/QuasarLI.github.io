@@ -3,32 +3,34 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CineDock privacy and data-use status - Quasar Labs</title>
+  <title>CineDock development privacy notes - Google Drive and local data</title>
   <meta name="description" content="Development-stage CineDock data-use notes: Google Drive read-only access, local authorization and playback history, retained downloads, and unresolved release privacy requirements.">
   <link rel="canonical" href="https://quasarli.github.io/cinedock/privacy/">
   <link rel="icon" href="/assets/icon-cinedock.svg" type="image/svg+xml">
   <script src="/assets/theme-init.js"></script>
-  <link rel="stylesheet" href="/assets/styles.css?v=20261029-1">
-  <link rel="stylesheet" href="/assets/cinedock.css?v=20261029-1">
+  <link rel="stylesheet" href="/assets/styles.css?v=20261029-2">
+  <link rel="stylesheet" href="/assets/cinedock.css?v=20261029-2">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Quasar Labs">
-  <meta property="og:title" content="CineDock privacy and data-use status">
-  <meta property="og:description" content="Verified development notes, not a finalized release privacy policy or Google approval.">
+  <meta property="og:title" content="CineDock development privacy notes - Google Drive and local data">
+  <meta property="og:description" content="Read the development data map, local storage and revocation boundaries. Not a finalized release privacy policy or Google approval.">
   <meta property="og:url" content="https://quasarli.github.io/cinedock/privacy/">
   <meta property="og:image" content="https://quasarli.github.io/assets/icon-cinedock.svg">
+  <meta property="og:image:alt" content="Original CineDock screen and dock illustration">
   <meta name="twitter:card" content="summary">
-  <script src="/assets/site.js?v=20261024-3" defer></script>
+  <script src="/assets/site.js?v=20261029-1" defer></script>
 </head>
-<body>
+<body class="cinedock-page">
   <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header"><nav class="nav shell" aria-label="Primary navigation"><a class="brand" href="/" aria-label="Quasar Labs home"><img src="/assets/mark.svg?v=20261024-5" alt="" width="34" height="34"><span class="brand-name">Quasar Labs</span><span class="beta-tag">Beta</span></a><button class="menu-button" type="button" aria-expanded="false" aria-controls="nav-links"><span class="sr-only">Toggle navigation</span><span aria-hidden="true">Menu</span></button><div class="nav-links" id="nav-links"><a href="/cinedock/">CineDock</a><a href="/cinedock/privacy/" aria-current="page">Data-use status</a><a href="/cinedock/support/">Support</a><a class="nav-cta" href="/cinedock/#availability">Development status</a></div><label class="theme-picker"><span>Theme</span><select id="theme-select" aria-label="Site theme"><option value="obsidian">Obsidian</option><option value="deep-space">Deep Space</option><option value="graphite">Graphite</option><option value="aurora">Aurora</option><option value="nebula">Nebula</option><option value="solar-flare">Solar Flare</option></select></label></nav></header>
+  <header class="site-header"><nav class="nav shell" aria-label="Primary navigation"><a class="brand" href="/" aria-label="Quasar Labs home"><img src="/assets/mark.svg?v=20261024-5" alt="" width="34" height="34"><span class="brand-name">Quasar Labs</span><span class="beta-tag">Beta</span></a><button class="menu-button" type="button" aria-expanded="false" aria-controls="nav-links"><span class="sr-only">Toggle navigation</span><span aria-hidden="true">Menu</span></button><div class="nav-links" id="nav-links"><a href="/projects/">Projects</a><a href="/about/">About</a><a href="/links/">Links</a><a href="/support/">Support</a><a class="nav-cta" href="/cinedock/#availability">CineDock status</a></div><label class="theme-picker"><span>Theme</span><select id="theme-select" aria-label="Site theme"><option value="obsidian">Obsidian</option><option value="deep-space">Deep Space</option><option value="graphite">Graphite</option><option value="aurora">Aurora</option><option value="nebula">Nebula</option><option value="solar-flare">Solar Flare</option></select></label></nav></header>
   <main id="main">
-    <header class="page-hero shell"><p class="kicker">CineDock / development notes</p><h1>Privacy starts with an accurate data map.</h1><p>Reviewed October 29, 2026. CineDock remains in private development; there is no public customer release.</p></header>
+    <nav class="breadcrumbs shell" aria-label="Breadcrumb"><ol><li><a href="/">Quasar Labs</a></li><li><a href="/cinedock/">CineDock</a></li><li><span aria-current="page">Data-use notes</span></li></ol></nav>
+    <header class="page-hero shell"><p class="kicker">CineDock / development notes</p><h1>CineDock data-use notes.</h1><p>Reviewed October 29, 2026. CineDock remains in private development; there is no public customer release.</p></header>
+    <nav class="section-index shell" aria-label="On this page"><span>Data-use notes</span><a href="#website-data">Website</a><a href="#google-data">Google data</a><a href="#storage">Storage</a><a href="#deletion">Deletion</a><a href="#release-policy">Release policy</a></nav>
     <section class="content-section shell">
       <p class="notice"><strong>Not a finalized release privacy policy:</strong> these notes describe the reviewed development implementation. Publisher identity, the app-specific privacy contact, retention decisions, and final user-facing deletion instructions still require owner approval. Do not treat this page as evidence of Google OAuth verification or a completed compliance review.</p>
-      <nav class="cinedock-resources" aria-label="Data-use topics"><a href="#google-data">Google data</a><a href="#storage">Local storage</a><a href="#deletion">Deletion and revocation</a><a href="#release-policy">Release requirements</a></nav>
       <div class="prose cinedock-prose">
-        <h2>This website is separate from the desktop app</h2>
+        <h2 id="website-data">This website is separate from the desktop app</h2>
         <p>This site does not connect your Google account or receive your Drive library. Its static hosting and session-only theme setting are described in the <a href="/privacy/">Quasar Labs website privacy notice</a>. Those website statements are not a claim that the desktop app has no network access or stores no data.</p>
 
         <h2 id="google-data">Google Drive access under development</h2>
@@ -50,12 +52,12 @@
         <p>There is not yet a confirmed CineDock-specific privacy or deletion-request contact. Use the <a href="/cinedock/support/#contact">existing general Quasar Labs inquiry route</a> for release questions, without sending credentials or private media. That route is not a published deletion-service commitment.</p>
 
         <h2 id="release-policy">What must be settled before a public Google-connected release</h2>
-        <p>The owner must approve the responsible publisher identity, a monitored support/privacy/deletion contact, the final feature and processor inventory, retention periods, and usable token/history/temporary-file deletion instructions. The release policy must accurately address data use, transfers, processors, retention, deletion, and the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including its Limited Use requirements. These notes do not substitute for that approved policy.</p>
-        <p>Production domain ownership, matching homepage/privacy/terms pages, production Desktop-client configuration, scope justification, and Google's restricted-scope review and any required assessment are separate steps. Neither local-only playback architecture nor a published product page establishes approval or an assessment exemption.</p>
+        <p>Publisher/contact approval, retention and deletion instructions, production domain/client ownership, Google's restricted-scope review and any required assessment remain open. Follow the <a href="/cinedock/support/#release-steps">canonical owner and release checklist</a> for these prerequisites alongside device and distribution acceptance.</p>
+        <p>The final release policy must accurately address data use, transfers, processors, retention, deletion, and the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including its Limited Use requirements. These notes do not substitute for that approved policy. Neither local-only playback architecture nor a published product page establishes approval or an assessment exemption.</p>
         <p>See <a href="/cinedock/">CineDock's product overview</a> for current availability and optional integration boundaries.</p>
       </div>
     </section>
   </main>
-  <footer class="site-footer"><div class="shell footer-grid"><div><a class="brand" href="/"><img src="/assets/mark.svg?v=20261024-5" alt="" width="30" height="30"><span>Quasar Labs</span></a><p>CineDock / Private development.</p></div><div><h2>CineDock</h2><a href="/cinedock/">Product overview</a><a href="/cinedock/privacy/" aria-current="page">Privacy and data-use status</a><a href="/cinedock/privacy/#deletion">Deletion and revocation</a><a href="/cinedock/support/">Support</a></div><div><h2>Products</h2><a href="/projects/">All projects</a><a href="/quasar/">Quasar downloads</a><a href="/pixelbridge/">PixelBridge downloads</a><a href="/cinedock/">CineDock development</a></div><div><h2>Company</h2><a href="/about/">About</a><a href="/links/">Official links</a><a href="/privacy/">Website privacy</a></div></div><div class="shell footer-bottom"><span>&copy; <span data-year>2026</span> Quasar Labs</span><span>Development notes. Not release approval.</span></div></footer>
+  <footer class="site-footer"><div class="shell footer-grid"><div><a class="brand" href="/"><img src="/assets/mark.svg?v=20261024-5" alt="" width="30" height="30"><span>Quasar Labs</span></a><p>CineDock / Private development.</p></div><div><h2>CineDock</h2><a href="/cinedock/">Product overview</a><a href="/cinedock/privacy/" aria-current="page">Privacy and data-use status</a><a href="/cinedock/privacy/#deletion">Deletion and revocation</a><a href="/cinedock/support/">Support</a></div><div><h2>Products</h2><a href="https://lircin.github.io">L’IRC’in ↗</a><a href="https://github.com/QuasarLI/TaskForge/releases/latest">TaskForge releases ↗</a><a href="/quasar/">Quasar downloads</a><a href="/cuspr/">Cuspr overview</a><a href="/pixelbridge/">PixelBridge downloads</a><a href="/cinedock/">CineDock development</a></div><div><h2>Company</h2><a href="/about/">About</a><a href="/links/">Official links</a><a href="/privacy/">Website privacy</a></div></div><div class="shell footer-bottom"><span>&copy; <span data-year>2026</span> Quasar Labs</span><span>Development notes. Not release approval.</span></div></footer>
 </body>
 </html>
