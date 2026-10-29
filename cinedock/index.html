@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CineDock - Your library, in focus - Quasar Labs</title>
+  <meta name="description" content="CineDock is a Windows-first media center in private development for local and mounted network libraries, with Google Drive integration under evaluation. No public download is available.">
+  <link rel="canonical" href="https://quasarli.github.io/cinedock/">
+  <link rel="icon" href="/assets/icon-cinedock.svg" type="image/svg+xml">
+  <script src="/assets/theme-init.js"></script>
+  <link rel="stylesheet" href="/assets/styles.css?v=20261029-1">
+  <link rel="stylesheet" href="/assets/cinedock.css?v=20261029-1">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Quasar Labs">
+  <meta property="og:title" content="CineDock - Your library, in focus">
+  <meta property="og:description" content="A Windows-first media center in private development. Read the current capabilities, optional integrations, and release boundaries.">
+  <meta property="og:url" content="https://quasarli.github.io/cinedock/">
+  <meta property="og:image" content="https://quasarli.github.io/assets/icon-cinedock.svg">
+  <meta property="og:image:alt" content="Original CineDock screen and dock illustration">
+  <meta name="twitter:card" content="summary">
+  <meta name="theme-color" content="#07110c">
+  <script src="/assets/site.js?v=20261024-3" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav shell" aria-label="Primary navigation">
+      <a class="brand" href="/" aria-label="Quasar Labs home"><img src="/assets/mark.svg?v=20261024-5" alt="" width="34" height="34"><span class="brand-name">Quasar Labs</span><span class="beta-tag">Beta</span></a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="nav-links"><span class="sr-only">Toggle navigation</span><span aria-hidden="true">Menu</span></button>
+      <div class="nav-links" id="nav-links"><a href="/projects/">Projects</a><a href="/about/">About</a><a href="/links/">Links</a><a href="/cinedock/support/">CineDock support</a><a class="nav-cta" href="#availability">Development status</a></div>
+      <label class="theme-picker"><span>Theme</span><select id="theme-select" aria-label="Site theme"><option value="obsidian">Obsidian</option><option value="deep-space">Deep Space</option><option value="graphite">Graphite</option><option value="aurora">Aurora</option><option value="nebula">Nebula</option><option value="solar-flare">Solar Flare</option></select></label>
+    </nav>
+  </header>
+  <main id="main">
+    <header class="cinedock-hero">
+      <div class="shell cinedock-hero-grid">
+        <div>
+          <p class="kicker">CineDock / Windows-first / private development</p>
+          <h1>Your library.<br><span>In focus.</span></h1>
+          <p class="hero-copy">A media center for the films and shows you have the right to play. CineDock brings local and mounted network libraries into readable, living-room navigation with original console-inspired visuals and libmpv-based playback.</p>
+          <div class="actions"><a class="button primary" href="#features">Explore the direction</a><a class="button secondary" href="#availability">Read development status</a></div>
+          <p class="availability-line">Not a public release. No public installer, download, or release date is available.</p>
+        </div>
+        <figure class="cinedock-art"><img src="/assets/icon-cinedock.svg" alt="" width="256" height="256"><figcaption>One place to settle into your library.<br>Original CineDock illustration, not an app screenshot.</figcaption></figure>
+      </div>
+    </header>
+    <nav class="section-index shell" aria-label="On this page"><span>CineDock</span><a href="#features">Overview</a><a href="#integrations">Integrations</a><a href="#availability">Status</a><a href="#licensing">Licensing</a><a href="/cinedock/privacy/">Privacy</a><a href="/cinedock/support/">Support</a></nav>
+
+    <section class="section shell" id="features" aria-labelledby="features-title">
+      <div class="section-heading"><div><p class="kicker">The development app</p><h2 id="features-title">A calmer way into your collection.</h2></div></div>
+      <p class="section-intro">These capabilities describe the private development app, not a generally available or universally tested product.</p>
+      <div class="capability-grid">
+        <article><span>Library</span><h3>Local and mounted media</h3><p>Browse your own local folders and network libraries mounted on your Windows PC. You supply the media and access rights.</p></article>
+        <article><span>Playback</span><h3>Built around libmpv</h3><p>A media-focused playback foundation, with compatibility dependent on the file, codec, device, and runtime.</p></article>
+        <article><span>Navigation</span><h3>Readable from the sofa</h3><p>Keyboard and mouse navigation with opt-in Xbox navigation. Physical controller and remote compatibility still need separate testing.</p></article>
+        <article><span>Atmosphere</span><h3>Make room for quiet</h3><p>Ambient screensavers and original console-inspired visuals, without claiming affiliation with another media-center or console brand.</p></article>
+      </div>
+    </section>
+
+    <section class="section cinedock-band" id="integrations" aria-labelledby="integrations-title">
+      <div class="shell">
+        <div class="section-heading"><div><p class="kicker">Optional, with clear boundaries</p><h2 id="integrations-title">More possibilities. Separate checks.</h2></div></div>
+        <div class="detail-grid">
+          <article><span>Cloud / under evaluation</span><h3>Google Drive</h3><p>The private app opens the external system browser for authorization; sign-in there currently needs keyboard and mouse. Successful sign-in alone does not establish complete library browsing, streaming, or Google OAuth approval. Google account access is not available on this website.</p></article>
+          <article><span>Conversion / optional</span><h3>Saved high-frame-rate media</h3><p>Ordinary lightweight playback is the default. Optional saved-HFR conversion uses a separately installed and licensed SVPcode companion, not verified in-app SVP automation or real-time smoothing. Source and device compatibility still need checking.</p></article>
+          <article><span>Host setup / optional</span><h3>Sunshine and Moonlight</h3><p>Optional host-setup integration remains under evaluation. End-to-end attended runtime acceptance is incomplete; receiver pairing, remote hosts, physical devices, and Windows 10 need distinct checks.</p></article>
+        </div>
+        <p class="notice"><strong>Research is not a shipped feature:</strong> alternative browser sign-in and library caching approaches are being assessed separately. This page does not offer an embedded-login workaround, bypass Google authorization, or promise offline cloud playback.</p>
+        <div class="prose cinedock-prose"><h3>A separate, user-managed local-file route</h3><p>Files exposed by Google's own Drive for desktop client or downloaded through a standard browser are another workflow under evaluation. That filesystem-only route does not need a CineDock API grant, but it is not native cloud integration or an authentication bypass. Connected-client, local storage, seeking, offline availability, and conversion compatibility still need checks. Sync changes or deletions can affect cloud copies; review <a href="https://support.google.com/drive/answer/13401938?hl=en">Google's stream and mirror guidance</a> before changing your setup.</p></div>
+      </div>
+    </section>
+
+    <section class="section shell" id="availability" aria-labelledby="availability-title">
+      <div class="section-heading"><div><p class="kicker">Availability</p><h2 id="availability-title">Public information. Private development.</h2></div></div>
+      <p class="section-intro">CineDock is not yet a publicly accepted customer release. Its source repository and owner-only previews remain private. This product page is not a download portal or a waitlist.</p>
+      <dl class="cinedock-status"><div><dt>Stage</dt><dd>Private development</dd></div><div><dt>Public package</dt><dd>None available</dd></div><div><dt>Release timing</dt><dd>Not announced</dd></div></dl>
+      <div class="prose cinedock-prose">
+        <h3>What still needs to happen</h3>
+        <p>Complete owner-attended Drive browsing and playback checks, resolve host-setup acceptance, and validate the intended Windows and physical-device support. A public release also needs reviewed distribution, third-party notices, support details, and Google privacy and authorization requirements. No release date is implied by this list.</p>
+      </div>
+      <div class="cinedock-resources"><a href="/cinedock/privacy/">CineDock privacy and data-use status</a><a href="/cinedock/privacy/#deletion">Data deletion and access revocation</a><a href="/cinedock/support/">CineDock support and release questions</a></div>
+    </section>
+
+    <section class="section cinedock-band" id="licensing" aria-labelledby="licensing-title">
+      <div class="shell prose cinedock-prose">
+        <p class="kicker">Project code and dependencies</p>
+        <h2 id="licensing-title">Licensing stays specific.</h2>
+        <p><strong>MIT selected for CineDock-owned source; licensing update in progress.</strong> The owner has designated MIT licensing for project-owned CineDock code. Third-party components retain their own licenses and notices; this is not an MIT-only designation for the complete dependency bundle.</p>
+        <p>Source application of that choice is still pending. Licensing does not make the private source or owner previews publicly available; public distribution and its required notices remain separate release steps.</p>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="shell footer-grid"><div><a class="brand" href="/"><img src="/assets/mark.svg?v=20261024-5" alt="" width="30" height="30"><span>Quasar Labs</span></a><p>CineDock / Private development.</p></div><div><h2>CineDock</h2><a href="/cinedock/">Product overview</a><a href="/cinedock/#availability">Availability</a><a href="/cinedock/privacy/">Privacy and data use</a><a href="/cinedock/support/">Support</a></div><div><h2>Products</h2><a href="/projects/">All projects</a><a href="/quasar/">Quasar downloads</a><a href="/pixelbridge/">PixelBridge downloads</a><a href="/cinedock/" aria-current="page">CineDock development</a></div><div><h2>Company</h2><a href="/about/">About</a><a href="/links/">Official links</a><a href="/privacy/">Website privacy</a></div></div><div class="shell footer-bottom"><span>&copy; <span data-year>2026</span> Quasar Labs</span><span>Clear status. Your own library.</span></div></footer>
+</body>
+</html>
