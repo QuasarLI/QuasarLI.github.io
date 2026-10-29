@@ -120,11 +120,14 @@ class CineDockSiteTests(unittest.TestCase):
             "separately installed and licensed SVPcode companion",
             "End-to-end attended runtime acceptance is incomplete",
             "embedded-login workaround",
-            "designated MIT licensing for project-owned CineDock code",
+            "CineDock-owned source is MIT-licensed.",
+            "Copyright (c) 2026 Quasar Labs.",
             "Third-party components retain their own licenses",
             "not an MIT-only designation",
         ):
             self.assertIn(boundary, text)
+        self.assertNotIn("licensing update in progress", text)
+        self.assertNotIn("Source application of that choice is still pending", text)
 
     def test_data_notes_do_not_masquerade_as_a_release_policy(self):
         _, page = read_page("/cinedock/privacy/")
