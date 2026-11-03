@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">CineDock</title>
+  <desc id="desc">An original cinema screen and play symbol resting in an open dock.</desc>
+  <defs>
+    <linearGradient id="screen" x1="48" y1="40" x2="208" y2="200" gradientUnits="userSpaceOnUse"><stop stop-color="#b6f3cf"/><stop offset="1" stop-color="#67cce6"/></linearGradient>
+    <linearGradient id="field" x2="1" y2="1"><stop stop-color="#122d31"/><stop offset="1" stop-color="#09141e"/></linearGradient>
+  </defs>
+  <rect x="4" y="4" width="248" height="248" rx="56" fill="url(#field)" stroke="#34575d" stroke-width="2"/>
+  <rect x="45" y="48" width="166" height="124" rx="20" fill="#10242c" stroke="url(#screen)" stroke-width="7"/>
+  <path d="m110 80 46 30-46 30Z" fill="url(#screen)"/>
+  <path d="M37 178v16a18 18 0 0 0 18 18h146a18 18 0 0 0 18-18v-16" fill="none" stroke="url(#screen)" stroke-width="7" stroke-linecap="round"/>
+  <path d="M103 192h50" stroke="#b6f3cf" stroke-width="6" stroke-linecap="round"/>
+</svg>

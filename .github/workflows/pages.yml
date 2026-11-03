@@ -28,6 +28,8 @@ jobs:
         run: python scripts/check_site.py
       - name: Check PixelBridge production release presentation
         run: python -m unittest scripts.test_pixelbridge_site
+      - name: Check CineDock development presentation
+        run: python -m unittest scripts.test_cinedock_site
 
   deploy:
     if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'

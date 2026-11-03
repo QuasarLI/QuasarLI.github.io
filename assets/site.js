@@ -15,6 +15,16 @@ if (menuButton && navLinks) {
       navLinks.classList.remove("open");
     }
   });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && menuButton.getAttribute("aria-expanded") === "true") {
+      menuButton.setAttribute("aria-expanded", "false");
+      navLinks.classList.remove("open");
+      menuButton.focus();
+    }
+  });
+
+  document.documentElement.classList.add("nav-ready");
 }
 
 if (themeSelect) {
